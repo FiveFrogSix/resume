@@ -5,11 +5,29 @@ const routes = [
   {
     path: '/',
     component: () => import('@/layouts/default/DefaultLayout.vue'),
+    redirect: {
+      name: "Home"
+    },
     children: [
       {
-        path: '',
+        path: 'home',
         name: 'Home',
         component: () => import('@/views/HomeView.vue'),
+      },
+      {
+        path: 'skills',
+        name: 'Skills',
+        component: () => import('@/views/SkillView.vue'),
+      },
+      {
+        path: 'career-path',
+        name: 'CareerPath',
+        component: () => import('@/views/TimelineView.vue'),
+      },
+      {
+        path: 'contacts',
+        name: 'Contacts',
+        component: () => import('@/views/ContactView.vue'),
       },
     ],
   },

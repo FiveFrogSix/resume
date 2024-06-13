@@ -1,3 +1,3 @@
 <template>
-    Tirawat
+    Timeline
 </template>
