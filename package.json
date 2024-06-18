@@ -26,6 +26,7 @@
     "eslint-plugin-vue": "^9.3.0",
     "happy-dom": "^13.9.0",
     "sass": "^1.60.0",
+    "sass-loader": "^14.2.1",
     "unplugin-fonts": "^1.0.3",
     "vite": "^4.2.0",
     "vite-plugin-vuetify": "^1.0.0",

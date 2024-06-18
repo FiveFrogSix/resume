@@ -10,10 +10,10 @@ const theme = ref("dark")
                 <v-col align-self="center">
                     <v-btn-toggle density="compact" rounded="pill" dividedborderless>
                         <v-btn value="TH" size="small">
-                            <span class="hidden-sm-and-down">TH</span>
+                            <span>TH</span>
                         </v-btn>
                         <v-btn value="EN" size="small">
-                            <span class="hidden-sm-and-down">EN</span>
+                            <span>EN</span>
                         </v-btn>
                     </v-btn-toggle>
                 </v-col>
