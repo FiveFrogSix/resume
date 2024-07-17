@@ -4,8 +4,8 @@ import SwitchTheme from "@/components/input/SwitchTheme.vue"
 </script>
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
+    <nav class="navbar pt-3 pb-0 px-0">
+      <div class="container-fluid px-0">
         <div class="d-flex ms-auto">
           <div>
             <SwitchLanguage />

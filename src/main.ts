@@ -5,6 +5,7 @@ import App from "@/App.vue"
 import router from "@/router"
 import optionsI18nPlugin from "@/plugins/i18n/options"
 import "@scss/bootstrap-custom.scss"
+import "@scss/style.scss"
 import "bootstrap"
 // Font Awsome
 import { library } from "@fortawesome/fontawesome-svg-core"
