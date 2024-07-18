@@ -11,7 +11,8 @@ import "bootstrap"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 import { fas } from "@fortawesome/free-solid-svg-icons"
-library.add(fas)
+import { far } from "@fortawesome/free-regular-svg-icons"
+library.add(fas, far)
 
 const i18n = createI18n(optionsI18nPlugin)
 const app = createApp(App)

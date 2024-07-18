@@ -1,3 +1,11 @@
 {
-  "hello": "hello world"
+  "hello": "hello world",
+  "home": "Home",
+  "about": "About",
+  "resume": "Resume",
+  "contact": "Contact",
+  "personal": {
+    "fullname": "Tirawat Saijai",
+    "nickname": "Beam"
+  }
 }
