@@ -1,0 +1,14 @@
+.typing-cursor {
+  font-weight: 100;
+  margin-left: 1px;
+}
+
+.typing-cursor-wip {
+  animation: Browser-cursor 1s steps(1) infinite;
+}
+
+@keyframes Browser-cursor {
+  50% {
+    color: transparent;
+  }
+}
