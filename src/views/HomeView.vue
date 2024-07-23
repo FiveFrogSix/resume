@@ -35,7 +35,7 @@ const initTypewriter = () => {
     .callFunction(() => {
       document.querySelector(".typing-cursor")?.classList.remove("typing-cursor-wip")
     })
-    .typeString(`<br>&nbsp&nbsp&nbsp <span class="fs-6 fw-light">but i love front-end 💜</span>`)
+    .typeString(`<br>&nbsp&nbsp&nbsp <span class="fs-6 fw-light">but i prefer front-end 💜</span>`)
     .callFunction(() => {
       document.querySelector(".typing-cursor")?.classList.add("typing-cursor-wip")
     })
