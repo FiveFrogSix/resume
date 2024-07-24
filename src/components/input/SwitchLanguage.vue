@@ -21,35 +21,52 @@ const detectLang = () => {
   }
   lang.value = locale.value
 }
-const changeLang = () => {
+const changeLang = (e: Event) => {
+  const elem = e.target as HTMLButtonElement
+  lang.value = elem.value
   locale.value = lang.value
   localStorage.setItem("_lang", lang.value)
 }
 </script>
 
 <template>
-  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-    <input
-      value="th-TH"
-      type="radio"
-      class="btn-check"
-      name="lang"
-      v-model="lang"
-      id="th_lang"
-      autocomplete="off"
-      @change="changeLang"
-    />
-    <label class="btn btn-outline-primary btn-sm" for="th_lang">TH</label>
-    <input
-      value="en-US"
-      type="radio"
-      class="btn-check"
-      name="lang"
-      v-model="lang"
-      id="en_lang"
-      autocomplete="off"
-      @change="changeLang"
-    />
-    <label class="btn btn-outline-primary btn-sm" for="en_lang">EN</label>
+  <div class="dropdown">
+    <button class="btn p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <font-awesome-icon icon="fa-solid fa-earth-asia" />
+    </button>
+    <ul class="dropdown-menu dropdown-menu-custom dropdown-menu-end">
+      <li>
+        <button
+          value="th-TH"
+          class="dropdown-item"
+          :class="lang === 'th-TH' ? `active` : ``"
+          @click="changeLang"
+        >
+          ไทย
+        </button>
+      </li>
+      <li>
+        <button
+          value="en-US"
+          class="dropdown-item mt-1"
+          :class="lang === 'en-US' ? `active` : ``"
+          @click="changeLang"
+        >
+          อังกฤษ
+        </button>
+      </li>
+    </ul>
   </div>
 </template>
+<style scoped>
+.dropdown-menu-custom {
+  padding: 0.5rem;
+}
+.dropdown-item {
+  border-radius:  var(--bs-border-radius);;
+}
+.btn:active,
+.btn.show {
+  border-color: transparent !important;
+}
+</style>

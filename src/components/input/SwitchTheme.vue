@@ -21,7 +21,7 @@ const changeColorMode = () => {
 }
 </script>
 <template>
-  <div class="form-check form-switch">
+  <div class="form-switch">
     <input
       class="form-check-input"
       type="checkbox"
