@@ -58,12 +58,12 @@ const changeLang = (e: Event) => {
     </ul>
   </div>
 </template>
-<style scoped>
+<style lang="scss" scoped>
 .dropdown-menu-custom {
   padding: 0.5rem;
 }
 .dropdown-item {
-  border-radius:  var(--bs-border-radius);;
+  border-radius: var(--bs-border-radius);
 }
 .btn:active,
 .btn.show {

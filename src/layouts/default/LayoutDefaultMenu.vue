@@ -1,14 +1,13 @@
 <script lang="ts" setup>
 import type { Menu } from "@/types/menu"
-import { computed, onBeforeMount, ref, watch } from "vue"
+import { computed, onBeforeMount, onBeforeUnmount, onMounted, ref, watch } from "vue"
 import { RouterLink } from "vue-router"
 import { useI18n } from "vue-i18n"
+import IconHamBurger from "@/components/assets/IconHamBurger.vue"
+
+const menu_element = ref()
 const menu_list = ref<Menu[]>([])
 const { t, locale } = useI18n()
-
-onBeforeMount(() => {
-  setMenuList()
-})
 
 watch(locale, () => {
   setMenuList()
@@ -16,6 +15,18 @@ watch(locale, () => {
 
 const getMenuList = computed(() => {
   return menu_list.value
+})
+
+onBeforeMount(() => {
+  setMenuList()
+})
+
+onMounted(() => {
+  menu_element.value = document.querySelector(".menu-sm") as HTMLElement
+})
+
+onBeforeUnmount(() => {
+  menu_element.value.classList.remove("show")
 })
 
 const setMenuList = () => {
@@ -66,16 +77,88 @@ const setMenuList = () => {
     }
   ]
 }
+
+const showMenu = (e: Event) => {
+  const elem = e.currentTarget as HTMLElement
+  const check = menu_element.value.classList.contains("show") as Boolean
+  if (check) {
+    menu_element.value.classList.remove("show")
+    elem.classList.remove("toggle")
+  } else {
+    elem.classList.add("toggle")
+    menu_element.value.classList.add("show")
+  }
+}
 </script>
 <template>
-  <div class="position-fixed top-50 end-0 translate-middle-y">
-    <div class="d-flex flex-column gap-2 text-end">
+  <!-- MD -->
+  <div class="position-fixed top-50 end-0 translate-middle-y d-none d-md-block">
+    <div class="d-flex flex-column gap-2 text-end right-menu">
       <div v-for="(item, index) in getMenuList" :key="index">
-        <router-link v-bind="item.route">
+        <router-link v-bind="item.route" :title="item.text">
           <font-awesome-icon v-bind="item.faIcon" class="fa-fw" />
           <span class="ms-1"> {{ item.text }}</span>
         </router-link>
       </div>
     </div>
   </div>
+  <!-- SM -->
+  <div class="layer position-fixed bottom-0 start-50 translate-middle-x d-block d-md-none">
+    <button @click="showMenu" class="btn">
+      <IconHamBurger />
+    </button>
+  </div>
+  <div class="menu-sm position-fixed top-0 start-0 d-block d-md-none"></div>
 </template>
+
+<style lang="scss" scoped>
+// เมนูด้านขวาจอใหญ่
+.right-menu {
+  .btn-menu {
+    border-radius: 10px 0px 0px 10px;
+    transition:
+      width 0.4s,
+      scale 0.4s;
+    width: 32px;
+    text-align: left;
+    text-wrap: nowrap;
+    span {
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    &.btn-menu-active {
+      width: 120px;
+      span {
+        opacity: 1;
+      }
+    }
+  }
+}
+.layer {
+  z-index: 3001;
+}
+.menu-sm {
+  z-index: 3000;
+  opacity: 0;
+  overflow: hidden;
+  width: 0%;
+  height: 0%;
+  background-color: var(--bs-body-bg);
+  transition:
+    opacity 0.2s linear,
+    width 0.2s linear,
+    height 0.2s linear;
+  &.show {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.2s linear;
+  }
+}
+
+.btn:active,
+.btn.show {
+  border-color: transparent !important;
+}
+</style>
