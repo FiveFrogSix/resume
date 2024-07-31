@@ -31,7 +31,7 @@ const changeLang = (e: Event) => {
 
 <template>
   <div class="dropdown">
-    <button class="btn p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <button class="btn p-0 fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
       <font-awesome-icon icon="fa-solid fa-earth-asia" />
     </button>
     <ul class="dropdown-menu dropdown-menu-custom dropdown-menu-end">
@@ -42,7 +42,7 @@ const changeLang = (e: Event) => {
           :class="lang === 'th-TH' ? `active` : ``"
           @click="changeLang"
         >
-          ไทย
+          {{$t("th_lang")}}
         </button>
       </li>
       <li>
@@ -52,7 +52,8 @@ const changeLang = (e: Event) => {
           :class="lang === 'en-US' ? `active` : ``"
           @click="changeLang"
         >
-          อังกฤษ
+        {{$t("en_lang")}}
+
         </button>
       </li>
     </ul>

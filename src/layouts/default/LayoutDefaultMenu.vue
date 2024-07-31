@@ -78,7 +78,7 @@ const setMenuList = () => {
   ]
 }
 
-const showMenu = (e: Event) => {
+const toggleMenu = (e: Event) => {
   const elem = e.currentTarget as HTMLElement
   const check = menu_element.value.classList.contains("show") as Boolean
   if (check) {
@@ -88,6 +88,20 @@ const showMenu = (e: Event) => {
     elem.classList.add("toggle")
     menu_element.value.classList.add("show")
   }
+}
+
+const toggleMenuSmall = () => {
+  setTimeout(() => {
+    const elem = document.querySelector("#hamburger") as HTMLElement
+    const check = menu_element.value.classList.contains("show") as Boolean
+    if (check) {
+      menu_element.value.classList.remove("show")
+      elem.classList.remove("toggle")
+    } else {
+      elem.classList.add("toggle")
+      menu_element.value.classList.add("show")
+    }
+  }, 100)
 }
 </script>
 <template>
@@ -104,11 +118,30 @@ const showMenu = (e: Event) => {
   </div>
   <!-- SM -->
   <div class="layer position-fixed bottom-0 start-50 translate-middle-x d-block d-md-none">
-    <button @click="showMenu" class="btn">
+    <button @click="toggleMenu" id="hamburger" class="btn">
       <IconHamBurger />
     </button>
   </div>
-  <div class="menu-sm position-fixed top-0 start-0 d-block d-md-none"></div>
+  <div
+    class="menu-sm position-fixed top-0 start-0 d-flex d-md-none justify-content-center align-items-center"
+  >
+    <div class="w-50">
+      <template v-for="(item, index) in getMenuList" :key="index">
+        <div class="menu-box-item">
+          <router-link
+            :to="item.route.to"
+            :title="item.text"
+            @click="toggleMenuSmall"
+            class="btn menu-item w-100"
+            activeClass="menu-active"
+          >
+            <span class="menu-text"> {{ item.text }}</span>
+            <hr />
+          </router-link>
+        </div>
+      </template>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -138,6 +171,18 @@ const showMenu = (e: Event) => {
 .layer {
   z-index: 3001;
 }
+.menu-box-item {
+  &:nth-child(odd) {
+    hr {
+      margin-right: auto !important;
+    }
+  }
+  &:nth-child(even) {
+    hr {
+      margin-left: auto !important;
+    }
+  }
+}
 .menu-sm {
   z-index: 3000;
   opacity: 0;
@@ -146,14 +191,45 @@ const showMenu = (e: Event) => {
   height: 0%;
   background-color: var(--bs-body-bg);
   transition:
-    opacity 0.2s linear,
-    width 0.2s linear,
-    height 0.2s linear;
+    opacity 0.1s linear,
+    width 2s,
+    height 2s;
   &.show {
     opacity: 1;
     width: 100%;
     height: 100%;
     transition: opacity 0.2s linear;
+  }
+  .menu-item {
+    text-align: center;
+    .menu-text {
+      transition: font-size 0.3s ease;
+    }
+    hr {
+      opacity: 1;
+      border-color: var(--bs-primary);
+      width: 0%;
+      border-width: 3px;
+      margin: 0.4rem 0rem 0rem 0rem;
+      transition: width 0.3s linear;
+    }
+
+    &.menu-active {
+      .menu-text {
+        font-weight: 500;
+        font-size: 1.8rem;
+      }
+    }
+
+    &:hover {
+      .menu-text {
+        font-size: 1.5rem;
+        font-weight: 300;
+      }
+      hr {
+        width: 100%;
+      }
+    }
   }
 }
 

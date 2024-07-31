@@ -35,7 +35,7 @@ const initTypewriter = () => {
     .callFunction(() => {
       document.querySelector(".typing-cursor")?.classList.remove("typing-cursor-wip")
     })
-    .typeString(`<br> &nbsp&nbsp&nbsp  <span class="fs-6 fw-light">but i prefer front-end 💜</span>`)
+    .typeString(`<br><span class="fs-6 fw-light">but i prefer front-end 💜</span>`)
     .callFunction(() => {
       document.querySelector(".typing-cursor")?.classList.add("typing-cursor-wip")
     })
@@ -51,6 +51,6 @@ const initTypewriter = () => {
     <h1>{{ t("personal.fullname") }} ({{ t("personal.nickname") }})</h1>
   </div>
   <div style="height: 80px">
-    <h3 id="typewriter" class="ps-1"></h3>
+    <h3 id="typewriter"></h3>
   </div>
 </template>
