@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 8px;
-  transition: all 1s;
+  transition: all .25s;
   .sauce,
   .cheese,
   .meat {
@@ -22,15 +22,15 @@
   }
 
   .sauce {
-    transition: transform 0.4s linear;
+    transition: transform 0.25s linear;
   }
   .cheese {
     transition:
-      opacity 0.4s ease-in,
-      scale 0.3s ease-in;
+      opacity 0.25s ease-in,
+      scale 0.25s ease-in;
   }
   .meat {
-    transition: transform 0.4s linear;
+    transition: transform 0.25s linear;
   }
 }
 
@@ -43,8 +43,8 @@
       opacity: 0;
       scale: 0;
       transition:
-        opacity 0.5s ease-out,
-        scale 0.3s linear;
+        opacity 0.25s ease-out,
+        scale 0.25s linear;
     }
     .meat {
       transform: translate(0px, -10px) rotate(-45deg);
