@@ -1,0 +1,16 @@
+.anime-fade {
+  animation-name: fade1;
+  animation-duration: 0.25s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade1 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
