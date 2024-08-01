@@ -1,1 +1,11 @@
 @import "./style//transition", "./style/typewritter", "./style/animation";
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.box-custom {
+  height: calc(100vh - 66px);
+}

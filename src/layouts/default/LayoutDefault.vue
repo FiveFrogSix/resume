@@ -5,10 +5,8 @@ import LayoutDefaultView from "./LayoutDefaultView.vue"
 import LayoutDefaultFooter from "./LayoutDefaultFoot.vue"
 </script>
 <template>
-  <div>
-    <LayoutDefaultHeading />
-    <LayoutDefaultMenu />
-    <LayoutDefaultView />
-    <LayoutDefaultFooter />
-  </div>
+  <LayoutDefaultHeading />
+  <LayoutDefaultMenu />
+  <LayoutDefaultView />
+  <LayoutDefaultFooter />
 </template>

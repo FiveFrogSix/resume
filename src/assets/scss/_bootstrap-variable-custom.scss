@@ -14,4 +14,8 @@ $font-family-sans-serif:
   "Segoe UI Emoji",
   "Segoe UI Symbol",
   "Noto Color Emoji";
-$primary: #6F5392;
+$primary: #6f5392;
+$warning: #FFCC00;
+$input-border-radius: 0.5rem;
+$input-placeholder-color: rgba(var(--bs-secondary-rgb), 0.5);
+$input-font-weight: 300;

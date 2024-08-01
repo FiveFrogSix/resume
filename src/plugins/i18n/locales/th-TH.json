@@ -9,5 +9,8 @@
     "nickname": "บีม"
   },
   "th_lang": "ไทย",
-  "en_lang": "อังกฤษ"
+  "en_lang": "อังกฤษ",
+  "validate": {
+    "fullname": "กรุณาระบุชื่อ-นามสกุล"
+  }
 }

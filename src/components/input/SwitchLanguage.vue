@@ -24,8 +24,8 @@ const detectLang = () => {
 const changeLang = (e: Event) => {
   const elem = e.target as HTMLButtonElement
   lang.value = elem.value
-  locale.value = lang.value
   localStorage.setItem("_lang", lang.value)
+  window.location.reload()
 }
 </script>
 
@@ -42,7 +42,7 @@ const changeLang = (e: Event) => {
           :class="lang === 'th-TH' ? `active` : ``"
           @click="changeLang"
         >
-          {{$t("th_lang")}}
+          {{ $t("th_lang") }}
         </button>
       </li>
       <li>
@@ -52,8 +52,7 @@ const changeLang = (e: Event) => {
           :class="lang === 'en-US' ? `active` : ``"
           @click="changeLang"
         >
-        {{$t("en_lang")}}
-
+          {{ $t("en_lang") }}
         </button>
       </li>
     </ul>

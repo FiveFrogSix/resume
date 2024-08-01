@@ -118,7 +118,9 @@ const toggleMenuSmall = () => {
   </div>
 
   <!-- SM -->
-  <div class="layer position-fixed bottom-0 start-50 translate-middle-x d-block d-md-none anime-fade">
+  <div
+    class="layer position-fixed bottom-0 start-50 translate-middle-x d-block d-md-none anime-fade"
+  >
     <button @click="toggleMenu" id="hamburger" class="btn">
       <IconHamBurger />
     </button>
@@ -149,11 +151,13 @@ const toggleMenuSmall = () => {
 // เมนูด้านขวาจอใหญ่
 .right-menu {
   .btn-menu {
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 20px 0px 0px 20px;
     transition:
-      width 0.4s,
-      scale 0.4s;
-    width: 32px;
+      width 0.25s,
+      scale 0.25s,
+      text-align 0.25s;
+    padding-left: 15px;
+    width: 42px;
     text-align: left;
     text-wrap: nowrap;
     span {
@@ -162,7 +166,8 @@ const toggleMenuSmall = () => {
     }
 
     &.btn-menu-active {
-      width: 120px;
+      width: 105px;
+      text-align: center;
       span {
         opacity: 1;
       }

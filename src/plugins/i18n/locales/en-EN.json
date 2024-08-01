@@ -9,5 +9,8 @@
     "nickname": "Beam"
   },
   "th_lang": "Thai",
-  "en_lang": "English"
+  "en_lang": "English",
+  "validate": {
+    "fullname": "Fullname is required."
+  }
 }
