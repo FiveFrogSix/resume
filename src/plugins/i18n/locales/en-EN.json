@@ -11,6 +11,14 @@
   "th_lang": "Thai",
   "en_lang": "English",
   "validate": {
-    "fullname": "Fullname is required."
+    "fullname": "Name is required.",
+    "emailline": "Email or Line is required.",
+    "detail": "Please write something."
+  },
+  "fullname": "Fullname",
+  "emailline": "Email or Line",
+  "write_something": "Write something",
+  "form": {
+    "submit": "Submit"
   }
 }

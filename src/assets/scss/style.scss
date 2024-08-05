@@ -9,3 +9,11 @@ body {
 .box-custom {
   height: calc(100vh - 66px);
 }
+
+.font-validate {
+  color: var(--bs-danger);
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0px;
+  font-weight: 300;
+}
