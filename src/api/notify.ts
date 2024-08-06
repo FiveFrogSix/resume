@@ -5,17 +5,15 @@ const PostLineNotify = async (payload: LineNotify) => {
   const config = {
     url: "/notify.php",
     method: "POST",
-    data: {
-      message: payload.message
-    }
+    data: payload
   }
   return await axios(config)
     .then(async (res) => {
-      return res
+      return res.data
     })
     .catch((err) => {
       console.error(err)
-      return err.response
+      return err.response.data
     })
 }
 

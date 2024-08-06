@@ -4,4 +4,13 @@ const ColorMode = (color: string = "light") => {
   htmlElement.setAttribute("data-bs-theme", color)
 }
 
-export { ColorMode }
+const Loading = () => {
+  const elem = document.querySelector("#loading") as HTMLDivElement
+  if (elem?.classList.contains("show")) {
+    elem.classList.remove("show")
+  } else {
+    elem.classList.add("show")
+  }
+}
+
+export { ColorMode, Loading }

@@ -1,0 +1,8 @@
+[data-bs-theme="light"],
+* {
+  @import "../../../../node_modules/@sweetalert2/themes/default/default.scss";
+}
+
+[data-bs-theme="dark"] {
+  @import "../../../../node_modules/@sweetalert2/theme-dark/dark.scss";
+}

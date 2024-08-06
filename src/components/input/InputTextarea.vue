@@ -34,7 +34,7 @@ const addClass = ref({}) as Ref
 watch(
   () => props.validate,
   (newValue) => {
-    if (newValue) addClass.value["border-danger"] = newValue !== ""
+    addClass.value["border-danger"] = newValue !== ""
   }
 )
 

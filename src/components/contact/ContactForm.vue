@@ -5,7 +5,7 @@ import InputText from "@/components/input/InputText.vue"
 import InputTextarea from "@/components/input/InputTextarea.vue"
 import { PostLineNotify } from "@/api/notify"
 import type { LineNotify } from "@/types/line"
-
+import LoadingSpinner from "../assets/LoadingSpinner.vue"
 configure({
   validateOnBlur: false,
   validateOnChange: false,
@@ -14,26 +14,29 @@ configure({
 })
 
 const veeOptions = veeSetting()
-const { errors, handleSubmit, defineField } = useForm(veeOptions)
+const { errors, handleSubmit, defineField, resetForm, isSubmitting } = useForm(veeOptions)
 const [fullname, fullnameAttrs] = defineField("fullname")
 const [emailline, emaillineAttrs] = defineField("emailline")
 const [detail, detailAttrs] = defineField("detail")
 
 const onSuccess = async (values: any) => {
-  const payload = {
-    message: values.detail
-  } as LineNotify
-  const res = await PostLineNotify(payload)
-  console.log(res)
+  try {
+    const format_msg = `มีอะไรใหม่!\nชื่อ: ${values.fullname}\nช่องทางติดต่อ: ${values.emailline}\nรายละเอียด: ${values.detail}`
+    const payload = {
+      message: format_msg,
+      stickerPackageId: 6359,
+      stickerId: 11069861
+    } as LineNotify
+    const { status, data } = await PostLineNotify(payload)
+    if (status !== 200) throw data
+    Swal.fire().then(() => {
+      resetForm()
+    })
+  } catch (error) {
+    console.error(error)
+  }
 }
-
-const onInvalidSubmit = ({ values, errors, results }: any) => {
-  console.log(values)
-  console.log(results)
-  console.error(errors)
-}
-
-const onSubmit = handleSubmit(onSuccess, onInvalidSubmit)
+const onSubmit = handleSubmit(onSuccess)
 </script>
 <template>
   <div class="col-10 mx-auto">
@@ -52,7 +55,8 @@ const onSubmit = handleSubmit(onSuccess, onInvalidSubmit)
       </div>
       <div class="col">
         <InputText
-          id="line"
+          id="email"
+          name="email"
           :placeholder="$t(`emailline`)"
           v-model="emailline"
           v-bind="emaillineAttrs"
@@ -70,7 +74,11 @@ const onSubmit = handleSubmit(onSuccess, onInvalidSubmit)
         />
       </div>
       <div>
-        <button class="btn btn-warning">{{ $t("form.submit") }}</button>
+        <button :disabled="isSubmitting" class="btn btn-warning">
+          <loading-spinner :loading="isSubmitting">
+            {{ $t("form.submit") }}
+          </loading-spinner>
+        </button>
       </div>
     </form>
   </div>

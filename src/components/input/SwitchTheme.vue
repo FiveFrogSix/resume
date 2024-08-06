@@ -28,7 +28,7 @@ const changeColorMode = () => {
       role="switch"
       v-model="color"
       true-value="dark"
-      no-value="light"
+      false-value="light"
       @change="changeColorMode"
     />
   </div>
