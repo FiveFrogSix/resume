@@ -29,3 +29,12 @@ body {
     display: block;
   }
 }
+
+.grecaptcha-active{
+  .grecaptcha-badge{
+    display: block !important;
+  }
+}
+.grecaptcha-badge { 
+  display: none !important
+}

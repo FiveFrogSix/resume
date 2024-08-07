@@ -2,6 +2,10 @@
 import NavFooterBar from "./NavFooterBar.vue"
 import NavFooterItem from "./NavFooterItem.vue"
 
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faFacebook, faGithub, faLine } from "@fortawesome/free-brands-svg-icons"
+library.add(faGithub, faLine, faFacebook)
+
 const socials = [
   {
     attr: {

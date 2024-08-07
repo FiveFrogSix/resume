@@ -1,9 +1,4 @@
 declare global {
-  interface Window {
-    Swal: any
-  }
-  const Swal: {
-    fire: (options?: any) => Promise<any>
-  }
+  const grecaptcha: any
 }
-export default global
+export {}

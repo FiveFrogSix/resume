@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faSpinner } from "@fortawesome/free-solid-svg-icons"
+library.add(faSpinner)
 defineProps({
   loading: {
     type: Boolean,
@@ -10,7 +13,7 @@ defineProps({
   <div v-if="loading">
     <font-awesome-icon icon="fa-solid fa-spinner" class="fa-spin" />
   </div>
-  <div v-else >
+  <div v-else>
     <slot></slot>
   </div>
 </template>

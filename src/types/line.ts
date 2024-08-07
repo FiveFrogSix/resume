@@ -3,5 +3,4 @@ interface LineNotify {
   stickerPackageId?: number
   stickerId?: number
 }
-
 export type { LineNotify }

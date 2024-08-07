@@ -3,6 +3,11 @@ import { onBeforeMount, ref } from "vue"
 import { useI18n } from "vue-i18n"
 import { useNavigatorLanguage } from "@vueuse/core"
 
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faEarthAsia } from "@fortawesome/free-solid-svg-icons"
+
+library.add(faEarthAsia)
+
 const { locale } = useI18n({ useScope: "global" })
 const { language } = useNavigatorLanguage()
 const lang = ref("th-TH")

@@ -5,6 +5,21 @@ import { RouterLink } from "vue-router"
 import { useI18n } from "vue-i18n"
 import IconHamBurger from "@/components/assets/IconHamBurger.vue"
 
+import { library } from "@fortawesome/fontawesome-svg-core"
+import {
+  faHouse,
+  faUser,
+  faFile,
+  faEnvelope
+} from "@fortawesome/free-solid-svg-icons"
+
+library.add(
+  faHouse,
+  faUser,
+  faFile,
+  faEnvelope
+)
+
 const menu_element = ref()
 const menu_list = ref<Menu[]>([])
 const { t, locale } = useI18n()
