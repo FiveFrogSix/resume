@@ -6,8 +6,8 @@ import optionsI18nPlugin from "@/plugins/i18n/options"
 import VueSweetalert2 from "vue-sweetalert2"
 import "@/plugins/swal/scss/swal.plugin.scss"
 import SwalOptions from "@/plugins/swal/options"
-const swalOptions = SwalOptions()
 const i18n = createI18n(optionsI18nPlugin)
+const swalOptions = SwalOptions()
 export function registerPlugins(app: App<Element>) {
   app.use(createPinia())
   app.use(i18n)

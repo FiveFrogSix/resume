@@ -2,7 +2,6 @@ import App from "@/App.vue"
 import { createApp } from "vue"
 import { registerPlugins } from "./plugins"
 import { registerComponents } from "./components"
-
 import "@scss/bootstrap-custom.scss"
 import "@scss/style.scss"
 import "bootstrap"

@@ -1,6 +1,6 @@
+<script lang="ts" setup>
+import AboutContent from '@/components/about/AboutContent.vue';
+</script>
 <template>
-    <main>
-      <h1>About</h1>
-    </main>
-  </template>
-  
+  <AboutContent />
+</template>

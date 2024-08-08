@@ -20,5 +20,11 @@
   "write_something": "Write something",
   "form": {
     "submit": "Submit"
+  },
+  "confirm": "OK",
+  "aboutme": {
+    "present": "Hello, my nickname is Beam. I've been working as a Web Developer for about 3 years. Currently, I’m a Fullstack developer, though I primarily focus on Frontend work. I also handle some Backend tasks using PHP (with Laravel in certain parts) and Golang (Gin framework). On the Frontend, I mostly work with Vue3 and Vite, though I occasionally deal with older projects that use PHP and JavaScript. I prefer Frontend development over Backend, but I'm capable of doing both, with a stronger proficiency in Frontend.",
+    "list1": "I am available to work 100% in the office or in a hybrid model, depending on the company's conditions.",
+    "list2": "I am eager to learn new tech stacks or techniques."
   }
 }
