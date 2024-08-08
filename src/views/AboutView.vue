@@ -1,6 +1,10 @@
 <script lang="ts" setup>
-import AboutContent from '@/components/about/AboutContent.vue';
+import AboutMeSection from "@/components/about/AboutMeSection.vue"
+import AboutSkillSection from "@/components/about/AboutSkillSection.vue";
 </script>
 <template>
-  <AboutContent />
+  <div>
+    <AboutMeSection />
+    <AboutSkillSection />
+  </div>
 </template>

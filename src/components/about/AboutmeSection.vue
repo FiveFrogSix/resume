@@ -1,50 +1,30 @@
-<script setup lang="ts">
-import { computed, useSlots } from "vue"
-const slots = useSlots()
-console.log(slots)
+<script lang="ts" setup>
+import { ref } from "vue"
+import AboutInformation from "@/components/about/AboutInformation.vue"
+import AboutContact from "@/components/about/AboutContact.vue"
+import AboutProfile from "@/components/about/AboutProfile.vue"
 
-const props = defineProps({
-  title: {
-    default: "",
-    type: String
-  },
-  type: {
-    default: "",
-    type: String
-  },
-  value: {
-    default: "",
-    type: [String]
-  }
-})
-
-const getContact = computed(() => {
-  const type = props.type
-  const value = props.value
-  let result = ""
-  let target = ""
-  if (type === "phone") {
-    result = "tel:" + value
-  } else if (type === "email") {
-    result = "mailto:" + value
-  } else if (type === "link") {
-    result = "https://" + value
-    target = "_blank"
-  }
-  return { result, target }
-})
+const contact_lsit = ref([
+  { title: "Phone", contact: "0802399635", type: "phone" },
+  { title: "Email", contact: "tirawat.saijai@gmail.com", type: "email" },
+  { title: "Website", contact: "fivefrogsix.com", type: "link" }
+])
 </script>
 <template>
-  <div class="">
-    <div class="fw-500">{{ title }}</div>
-    <div class="fw-300">
-      <a
-        class="text-decoration-none text-body"
-        :target="getContact.target"
-        :href="getContact.result"
-      >
-        {{ value }}</a
-      >
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-2 g-0 gap-4 gap-md-0 box-custom px-2 px-lg-0">
+      <div class="col my-auto">
+        <AboutInformation />
+        <hr />
+        <div class="row row-cols-1 row-cols-lg-3">
+          <div class="col" v-for="(item, index) in contact_lsit" :key="index">
+            <AboutContact :title="item.title" :type="item.type" :value="item.contact" />
+          </div>
+        </div>
+      </div>
+      <div class="col my-auto">
+        <AboutProfile />
+      </div>
     </div>
   </div>
 </template>

@@ -70,17 +70,6 @@ const setMenuList = () => {
     },
     {
       route: {
-        to: { name: "Resume" },
-        class: "btn btn-primary btn-menu btn-sm",
-        activeClass: "btn-menu-active"
-      },
-      text: t("resume"),
-      faIcon: {
-        icon: "fa-solid fa-file"
-      }
-    },
-    {
-      route: {
         to: { name: "Contact" },
         class: "btn btn-primary btn-menu btn-sm",
         activeClass: "btn-menu-active"

@@ -5,7 +5,17 @@ body {
   height: 100%;
   width: 100%;
 }
+html {
+  scroll-behavior: smooth;
+}
 
+.h-100vh {
+  height: 100vh;
+}
+
+.w-100vw {
+  width: 100vw;
+}
 .box-custom {
   height: calc(100vh - 98px);
 }
@@ -25,16 +35,16 @@ body {
   height: 100%;
   z-index: 6000;
   display: none;
-  &.show{
+  &.show {
     display: block;
   }
 }
 
-.grecaptcha-active{
-  .grecaptcha-badge{
+.grecaptcha-active {
+  .grecaptcha-badge {
     display: block !important;
   }
 }
-.grecaptcha-badge { 
-  display: none !important
+.grecaptcha-badge {
+  display: none !important;
 }
