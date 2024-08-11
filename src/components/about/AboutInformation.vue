@@ -11,6 +11,7 @@ const { t } = useI18n()
         <ul class="fw-300 mt-2">
           <li>{{ t("aboutme.list1") }}</li>
           <li>{{ t("aboutme.list2") }}</li>
+          <li>{{ t("aboutme.list3") }}</li>
         </ul>
       </div>
     </div>
