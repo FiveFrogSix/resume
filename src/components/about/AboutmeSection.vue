@@ -3,16 +3,19 @@ import { ref } from "vue"
 import AboutInformation from "@/components/about/AboutInformation.vue"
 import AboutContact from "@/components/about/AboutContact.vue"
 import AboutProfile from "@/components/about/AboutProfile.vue"
+import { useI18n } from "vue-i18n"
+
+const { t } = useI18n()
 
 const contact_lsit = ref([
-  { title: "Phone", contact: "0802399635", type: "phone" },
-  { title: "Email", contact: "tirawat.saijai@gmail.com", type: "email" },
-  { title: "Website", contact: "fivefrogsix.com", type: "link" }
+  { title: t("phone"), contact: "0802399635", type: "phone" },
+  { title: t("email"), contact: "tirawat.saijai@gmail.com", type: "email" },
+  { title: t("website"), contact: "fivefrogsix.com", type: "link" }
 ])
 </script>
 <template>
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-2 g-0 gap-4 gap-md-0 box-custom px-2 px-lg-0">
+    <div class="row row-cols-1 row-cols-md-2 g-0 gap-4 gap-md-0 px-2 px-lg-0">
       <div class="col my-auto">
         <AboutInformation />
         <hr />

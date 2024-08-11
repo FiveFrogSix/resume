@@ -27,5 +27,13 @@
     "present": "สวัสดีครับชื่อเล่นบีมนะครับ ทำงาน Web Developer รวมๆแล้ว 3 ปี ปัจจุบันทำงานเป็น Fullstack แต่เน้นไปทาง Frontend ซะส่วนใหญ่ มีทำ Backend บ้างใช้ php (laravel บางจุด) กับ golang (gin framework) ส่วนหน้าบ้านส่วนใหญ่จะใช้ vue3 vite มีงานเก่าๆ ที่ยังใช้ php+js อยู่บ้าง หลักๆแล้วชอบทำ Frontend มากกว่า Backend แต่ก็สามารถทำได้ทั้ง 2 แต่จะถนัด Frontend มากกว่าครับ",
     "list1": "สามารถเข้า office ได้ 100% หรือ Hybrid ตามเงื่อนไขของบริษัท",
     "list2": "พร้อมเรียนรู้ Tech Stack หรือเทคนิคใหม่ๆ"
-  }
+  },
+  "phone": "เบอร์โทรศัพท์",
+  "website": "เว็บไซต์",
+  "about_title": {
+    "skill": "ความสามารถด้าน Developer",
+    "skill_other": "อื่นๆ",
+    "experience": "ประสบการณ์การทำงาน"
+  },
+  "learning": "กำลังเรียนรู้"
 }

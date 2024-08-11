@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { FormatPhone } from "@/composables/useFormat";
 import { computed } from "vue"
 
 const props = defineProps({
@@ -21,15 +22,17 @@ const getContact = computed(() => {
   const value = props.value
   let result = ""
   let target = ""
+  let title = value
   if (type === "phone") {
     result = "tel:" + value
+    title = FormatPhone(value)
   } else if (type === "email") {
     result = "mailto:" + value
   } else if (type === "link") {
     result = "https://" + value
     target = "_blank"
   }
-  return { result, target }
+  return { result, target, title }
 })
 </script>
 <template>
@@ -41,7 +44,7 @@ const getContact = computed(() => {
         :target="getContact.target"
         :href="getContact.result"
       >
-        {{ value }}</a
+        {{ getContact.title }}</a
       >
     </div>
   </div>

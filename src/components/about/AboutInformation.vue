@@ -4,7 +4,7 @@ const { t } = useI18n()
 </script>
 <template>
   <div class="container-fluid">
-    <div class="col-12 mx-auto d-flex flex-column gap-4 ">
+    <div class="col-12 mx-auto d-flex flex-column gap-4">
       <h2 class="text-center">About me</h2>
       <div>
         {{ t("aboutme.present") }}

@@ -2,7 +2,7 @@
 import { RouterView } from "vue-router"
 </script>
 <template>
-  <div>
+  <div class="pb-5">
     <router-view v-slot="{ Component, route }">
       <transition name="fade">
         <component :is="Component" :key="route.path" />
