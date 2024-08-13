@@ -52,7 +52,6 @@ const other_list = ref([
   "Chat-gpt or other ai chat",
   "Read document",
   "Componnet",
-  "Linux command",
   "Node package manager"
 ])
 
@@ -102,7 +101,7 @@ const scaleText = (level: number) => {
     <div class="w-100">
       <heading-title>{{ t("about_title.skill_other") }}</heading-title>
     </div>
-    <div class="row row-cols-3 g-3">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
       <template v-for="(item, index) in other_list" :key="index">
         <div class="col">
           <font-awesome-icon icon="fa-solid fa-check" class="text-success me-1" />

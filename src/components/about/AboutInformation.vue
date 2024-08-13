@@ -12,6 +12,7 @@ const { t } = useI18n()
           <li>{{ t("aboutme.list1") }}</li>
           <li>{{ t("aboutme.list2") }}</li>
           <li>{{ t("aboutme.list3") }}</li>
+          <li>{{ t("aboutme.list4") }}</li>
         </ul>
       </div>
     </div>
