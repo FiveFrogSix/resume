@@ -5,7 +5,7 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import { faCircle, faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons"
 import TimelineBox from "@/components/timeline/TimelineBox.vue"
 import TimelineCard from "@/components/timeline/TimelineCard.vue"
-import { TimelineExp } from "@/mockup/data"
+import { TimelineEducate } from "@/mockup/data"
 const { t } = useI18n()
 library.add(faCircle, faAngleDown, faAngleUp)
 </script>
@@ -13,10 +13,10 @@ library.add(faCircle, faAngleDown, faAngleUp)
 <template>
   <div class="container d-flex flex-column gap-5">
     <heading-title>
-      {{ t("about_title.experience") }}
+      {{ t("about_title.education") }}
     </heading-title>
     <timeline-box>
-      <template v-for="item in TimelineExp" :key="item">
+      <template v-for="item in TimelineEducate" :key="item">
         <TimelineCard v-bind="item" />
       </template>
     </timeline-box>

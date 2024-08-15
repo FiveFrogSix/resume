@@ -1,49 +1,37 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from "vue"
+import { onBeforeMount, reactive, ref } from "vue"
 import { useI18n } from "vue-i18n"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faStar as fasStar, faCheck } from "@fortawesome/free-solid-svg-icons"
 import { faStar } from "@fortawesome/free-regular-svg-icons"
-import { Tooltip } from "bootstrap"
 import HeadingTitle from "../assets/HeadingTitle.vue"
+import SkillLabel from "../assets/Skill/SkillLabel.vue"
+import SkillRank from "../assets/Skill/SkillRank.vue"
+import type { SkillRank as TypeSkillRank } from "@/types/array"
 library.add(faStar, fasStar, faCheck)
+
 const { t } = useI18n()
-const tooltipList = ref()
-const scale_rank = ref("scale_rank")
-
-onMounted(() => {
-  initTooltip()
-})
-
-onBeforeUnmount(() => {
-  removeTooltip()
-})
-
-const initTooltip = () => {
-  tooltipList.value = [...scale_rank.value].map((tooltipTriggerEl) => new Tooltip(tooltipTriggerEl))
-}
-
-const removeTooltip = () => {
-  for (const element of tooltipList.value) {
-    element.dispose()
-  }
-}
-const skill_list = ref([
-  { title: "HTML", level: 4 },
-  { title: "Css", level: 4 },
-  { title: "Sass & Scss", level: 3 },
-  { title: "Css framework & other", level: 4 },
-  { title: "Javascript", level: 4 },
-  { title: "Library Javascript", level: 3 },
-  { title: "Vuejs", level: 4 },
-  { title: "Nuxtjs", level: 3 },
-  { title: "PHP", level: 3 },
-  { title: "Laravel", level: 2 },
-  { title: "Golang (GIN)", level: 2 },
-  { title: "MySQL", level: 3 },
-  { title: "Typescript", level: 0 },
-  { title: "Nodejs", level: 0 }
+const skill_list = reactive([
+  { title: "HTML", level: 4, type: "front" },
+  { title: "Css", level: 4, type: "front" },
+  { title: "Sass & Scss", level: 3, type: "front" },
+  { title: "Css framework & other", level: 4, type: "front" },
+  { title: "Javascript", level: 4, type: "front" },
+  { title: "Library Javascript", level: 3, type: "front" },
+  { title: "Vuejs", level: 4, type: "front" },
+  { title: "Nuxtjs", level: 3, type: "front" },
+  { title: "PHP", level: 3, type: "back" },
+  { title: "Laravel", level: 2, type: "back" },
+  { title: "Golang (GIN)", level: 2, type: "back" },
+  { title: "MySQL", level: 3, type: "back" },
+  { title: "Typescript", level: 0, type: "other" },
+  { title: "Nodejs", level: 0, type: "other" }
 ])
+
+const skill_front = ref<TypeSkillRank[]>([]);
+const skill_back = ref<TypeSkillRank[]>([]);
+const skill_other = ref<TypeSkillRank[]>([]);
+
 const other_list = ref([
   "Responsive",
   "Dark theme",
@@ -52,50 +40,44 @@ const other_list = ref([
   "Chat-gpt or other ai chat",
   "Read document",
   "Componnet",
-  "Node package manager"
+  "Node package manager",
+  "Like good practice",
 ])
 
-const scaleText = (level: number) => {
-  let text = "Poor"
-  if (level === 5) text = "Excellent"
-  else if (level === 4) text = "Very good"
-  else if (level === 3) text = "Good"
-  else if (level === 2) text = "Fair"
-  return text
+onBeforeMount(() => {
+  filterRank()
+})
+
+const filterRank = () => {
+  skill_front.value = skill_list.filter((item) => {
+    return item.type === "front"
+  })
+  skill_back.value = skill_list.filter((item) => {
+    return item.type === "back"
+  })
+  skill_other.value = skill_list.filter((item) => {
+    return item.type === "other"
+  })
 }
 </script>
 <template>
-  <div class="container pt-5 d-flex flex-column gap-3">
-    <hr />
+  <div class="container pt-5 px-4 d-flex flex-column gap-5">
     <div class="w-100">
       <heading-title>{{ t("about_title.skill") }}</heading-title>
     </div>
+
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
-      <template v-for="(item, index) in skill_list" :key="index">
-        <div class="col">
-          <div class="row g-0">
-            <div class="col">{{ item.title }}</div>
-            <div class="col">
-              <div v-if="item.level === 0">
-                <span class="badge rounded-pill text-bg-warning text-dark fw-400">{{ t("learning") }}</span>
-              </div>
-              <div v-else class="d-flex">
-                <template v-for="star in 5" :key="star">
-                  <div
-                    ref="scale_rank"
-                    class="text-warning scale-star"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="top"
-                    :data-bs-title="scaleText(star)"
-                  >
-                    <font-awesome-icon v-if="item.level < star" icon="fa-regular fa-star" />
-                    <font-awesome-icon v-else icon="fa-solid fa-star" />
-                  </div>
-                </template>
-              </div>
-            </div>
-          </div>
-        </div>
+      <skill-label> Front End </skill-label>
+      <template v-for="(front, index) in skill_front" :key="index">
+        <SkillRank v-bind="front" />
+      </template>
+      <skill-label> Back End </skill-label>
+      <template v-for="(back, index) in skill_back" :key="index">
+        <SkillRank v-bind="back" />
+      </template>
+      <skill-label> Other </skill-label>
+      <template v-for="(other, index) in skill_other" :key="index">
+        <SkillRank v-bind="other" />
       </template>
     </div>
     <div class="w-100">

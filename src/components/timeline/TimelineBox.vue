@@ -23,4 +23,12 @@
     list-style: none;
   }
 }
+
+@media (max-width: 992px) {
+  .timeline-box {
+    &:before {
+      display: none;
+    }
+  }
+}
 </style>
