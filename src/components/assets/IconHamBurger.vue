@@ -6,18 +6,19 @@
   </div>
 </template>
 <style scoped lang="scss">
+
 .hamburger {
   display: flex;
   flex-direction: column;
-  row-gap: 8px;
-  transition: all .25s;
+  row-gap: 4px;
+  transition: all 0.25s;
   .sauce,
   .cheese,
   .meat {
     scale: 1;
     border-radius: 30px;
-    width: 36px;
-    height: 4px;
+    width: 20px;
+    height: 3px;
     background-color: var(--bs-body-color);
   }
 
@@ -37,7 +38,7 @@
 .toggle {
   .hamburger {
     .sauce {
-      transform: translate(0px, 14px) rotate(45deg);
+      transform: translate(0px, 11px) rotate(45deg);
     }
     .cheese {
       opacity: 0;
@@ -47,9 +48,8 @@
         scale 0.25s linear;
     }
     .meat {
-      transform: translate(0px, -10px) rotate(-45deg);
+      transform: translate(0px, -3px) rotate(-45deg);
     }
   }
 }
-
 </style>

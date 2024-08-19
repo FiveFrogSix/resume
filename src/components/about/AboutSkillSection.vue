@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { onBeforeMount, reactive, ref } from "vue"
+import ScrollReveal from "scrollreveal"
+import { onBeforeMount, onMounted, reactive, ref } from "vue"
 import { useI18n } from "vue-i18n"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faStar as fasStar, faCheck } from "@fortawesome/free-solid-svg-icons"
@@ -28,9 +29,15 @@ const skill_list = reactive([
   { title: "Nodejs", level: 0, type: "other" }
 ])
 
-const skill_front = ref<TypeSkillRank[]>([]);
-const skill_back = ref<TypeSkillRank[]>([]);
-const skill_other = ref<TypeSkillRank[]>([]);
+const skill_front = ref<TypeSkillRank[]>([])
+const skill_back = ref<TypeSkillRank[]>([])
+const skill_other = ref<TypeSkillRank[]>([])
+
+const skillReavel = ref()
+const otherReavel = ref()
+const frontLabelReveal = ref()
+const backLabelReveal = ref()
+const otherLabelReveal = ref()
 
 const other_list = ref([
   "Responsive",
@@ -39,13 +46,19 @@ const other_list = ref([
   "Version Control/Git",
   "Chat-gpt or other ai chat",
   "Read document",
-  "Componnet",
+  "Componnet Style",
   "Node package manager",
   "Like good practice",
+  "Problem Solving",
+  "CSR/SSR",
+  "Pagination/Infinity Scroll SSR"
 ])
 
 onBeforeMount(() => {
   filterRank()
+})
+onMounted(() => {
+  initReveal()
 })
 
 const filterRank = () => {
@@ -59,6 +72,16 @@ const filterRank = () => {
     return item.type === "other"
   })
 }
+
+const initReveal = () => {
+  const defaultOptions = { interval: 80, deley: 50, duration: 400 }
+  ScrollReveal().reveal(frontLabelReveal.value)
+  ScrollReveal().reveal(backLabelReveal.value)
+  ScrollReveal().reveal(otherLabelReveal.value)
+  ScrollReveal().reveal(skillReavel.value, defaultOptions)
+  ScrollReveal().reveal(otherReavel.value, defaultOptions)
+  console.log("testdasdsadas")
+}
 </script>
 <template>
   <div class="container pt-5 px-4 d-flex flex-column gap-5">
@@ -67,17 +90,29 @@ const filterRank = () => {
     </div>
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
-      <skill-label> Front End </skill-label>
+      <div ref="frontLabelReveal">
+        <skill-label> Front End </skill-label>
+      </div>
       <template v-for="(front, index) in skill_front" :key="index">
-        <SkillRank v-bind="front" />
+        <div ref="skillReavel">
+          <SkillRank v-bind="front" />
+        </div>
       </template>
-      <skill-label> Back End </skill-label>
+      <div ref="backLabelReveal">
+        <skill-label> Back End </skill-label>
+      </div>
       <template v-for="(back, index) in skill_back" :key="index">
-        <SkillRank v-bind="back" />
+        <div ref="skillReavel">
+          <SkillRank v-bind="back" />
+        </div>
       </template>
-      <skill-label> Other </skill-label>
+      <div ref="otherLabelReveal">
+        <skill-label> Other </skill-label>
+      </div>
       <template v-for="(other, index) in skill_other" :key="index">
-        <SkillRank v-bind="other" />
+        <div ref="skillReavel">
+          <SkillRank v-bind="other" />
+        </div>
       </template>
     </div>
     <div class="w-100">
@@ -85,7 +120,7 @@ const filterRank = () => {
     </div>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
       <template v-for="(item, index) in other_list" :key="index">
-        <div class="col">
+        <div ref="otherReavel" class="col">
           <font-awesome-icon icon="fa-solid fa-check" class="text-success me-1" />
           {{ item }}
         </div>

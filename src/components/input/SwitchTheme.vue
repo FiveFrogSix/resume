@@ -21,7 +21,7 @@ const changeColorMode = () => {
 }
 </script>
 <template>
-  <div class="form-switch ">
+  <div class="form-switch my-auto">
     <input
       class="form-check-input"
       type="checkbox"
@@ -36,16 +36,20 @@ const changeColorMode = () => {
 
 <style lang="scss" scoped>
 .form-switch {
-  height: 50px;
+  padding-left: 0px;
+  height: 21px;
+  width: 21px;
   .form-check-input {
+    border: none;
     margin-top: 0px;
-    height: 50px;
-    width: 50px;
+    margin-left: auto;
+    height: 21px;
+    width: 21px;
     background-image: url("@/assets/icon/sunny.png");
     &:checked {
       background-image: url("@/assets/icon/night.png");
     }
-    &:focus{
+    &:focus {
       box-shadow: none;
     }
   }

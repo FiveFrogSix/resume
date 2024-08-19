@@ -6,19 +6,9 @@ import { useI18n } from "vue-i18n"
 import IconHamBurger from "@/components/assets/IconHamBurger.vue"
 
 import { library } from "@fortawesome/fontawesome-svg-core"
-import {
-  faHouse,
-  faUser,
-  faFile,
-  faEnvelope
-} from "@fortawesome/free-solid-svg-icons"
+import { faHouse, faUser, faFile, faEnvelope } from "@fortawesome/free-solid-svg-icons"
 
-library.add(
-  faHouse,
-  faUser,
-  faFile,
-  faEnvelope
-)
+library.add(faHouse, faUser, faFile, faEnvelope)
 
 const menu_element = ref()
 const menu_list = ref<Menu[]>([])
@@ -125,7 +115,7 @@ const toggleMenuSmall = () => {
   <div
     class="layer position-fixed bottom-0 start-50 translate-middle-x d-block d-md-none anime-fade"
   >
-    <button @click="toggleMenu" id="hamburger" class="btn">
+    <button @click="toggleMenu" id="hamburger" class="btn btn-hamburger">
       <IconHamBurger />
     </button>
   </div>
@@ -152,6 +142,10 @@ const toggleMenuSmall = () => {
 </template>
 
 <style lang="scss" scoped>
+.btn-hamburger {
+  border-radius: 30px;
+  background-color: rgba(var(--bs-body-bg-rgb), 1);
+}
 // เมนูด้านขวาจอใหญ่
 .right-menu {
   .btn-menu {

@@ -66,7 +66,7 @@ const initHideDetail = () => {
     more_btn.value = t("show_more")
   } else if (detail_box.value && detail_button.value && detail_box.value.offsetHeight < 120) {
     btn_detail.value = false
-  } 
+  }
 }
 
 const morelessDetail = () => {
@@ -85,8 +85,7 @@ const morelessDetail = () => {
     detail_button.value.classList.add("detail-hidden")
     more_btn.value = t("show_more")
   }
-  console.log(more_btn.value);
-  
+  console.log(more_btn.value)
 }
 
 const parseDate = (start_str: string, end_str: string, type = "") => {
@@ -125,7 +124,7 @@ const parseDate = (start_str: string, end_str: string, type = "") => {
 <template>
   <li>
     <div class="row row-cols-1 row-cols-lg-2">
-      <div class="col text-end">
+      <div class="col text-start text-md-end">
         <div class="pe-5">
           <div class="fs-5 fw-500">
             {{ parseDate(start_date, end_date, end_date_type) }}
@@ -137,16 +136,16 @@ const parseDate = (start_str: string, end_str: string, type = "") => {
         <div class="dot-position d-none d-lg-block">
           <font-awesome-icon icon="fa-solid fa-circle" class="text-warning align-middle" />
         </div>
-        <div class="px-3 ps-md-5">
+        <div class="px-0 px-md-3 ps-md-5">
           <div class="fs-5 fw-500">{{ title }}</div>
           <div>{{ sub_title }}</div>
           <div ref="detail_box" class="timeline-detail">
             <div v-html="detail.title"></div>
-            <ol>
+            <ol class="heading">
               <template v-for="(detaillist, d_index) in detail.list" :key="d_index">
                 <li>
                   <div v-html="detaillist.title"></div>
-                  <ul>
+                  <ul class="subheading">
                     <template v-for="(detailsublist, s_index) in detaillist.list" :key="s_index">
                       <li>{{ detailsublist }}</li>
                     </template>
@@ -178,6 +177,12 @@ const parseDate = (start_str: string, end_str: string, type = "") => {
   border-color: transparent;
 }
 
+ol {
+  &.heading, &.subheading {
+    padding-left: 1rem;
+  }
+}
+
 .timeline-detail {
   position: relative;
   font-weight: 300;
@@ -206,7 +211,7 @@ const parseDate = (start_str: string, end_str: string, type = "") => {
 .dot-position {
   transform: translate(-20px);
   position: absolute;
-  background-color: white;
+  background-color: var(--bs-body-bg);
   height: 26px;
   border-radius: 50%;
   border: none;
