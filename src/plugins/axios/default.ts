@@ -10,5 +10,4 @@ const instance = axios.create(config)
 instance.defaults.headers.common["Authorization"] = `Bearer ${API_KEY}`
 instance.defaults.headers.post["Content-Type"] = "application/json"
 
-
 export default instance

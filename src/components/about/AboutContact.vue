@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FormatPhone } from "@/composables/useFormat";
+import { FormatPhone } from "@/composables/useFormat"
 import { computed } from "vue"
 
 const props = defineProps({

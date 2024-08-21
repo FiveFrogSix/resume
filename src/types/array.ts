@@ -1,4 +1,4 @@
-interface  SkillRank  {
+interface SkillRank {
   title?: string
   level?: number
   type?: string

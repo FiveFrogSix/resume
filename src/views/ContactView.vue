@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import ContactMap from "@/components/contact/ContactMap.vue"
 import ContactForm from "@/components/contact/ContactForm.vue"
-
 </script>
 <template>
   <div class="box-custom align-content-center pt-5 p-md-3">
