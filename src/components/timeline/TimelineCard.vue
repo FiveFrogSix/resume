@@ -178,7 +178,8 @@ const parseDate = (start_str: string, end_str: string, type = "") => {
 }
 
 ol {
-  &.heading, &.subheading {
+  &.heading,
+  &.subheading {
     padding-left: 1rem;
   }
 }

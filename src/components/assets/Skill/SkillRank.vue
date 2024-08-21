@@ -3,7 +3,6 @@ import { onBeforeUnmount, onMounted, ref } from "vue"
 import { useI18n } from "vue-i18n"
 import { Tooltip } from "bootstrap"
 
-
 const { t } = useI18n()
 const scale_rank = ref<HTMLDivElement[] | null>(null)
 const tooltipList = ref([]) as any
@@ -27,17 +26,19 @@ onBeforeUnmount(() => {
 })
 
 const initTooltip = () => {
-    if( scale_rank.value) {
-        tooltipList.value = [...scale_rank.value].map((tooltipTriggerEl) => new Tooltip(tooltipTriggerEl))
-    }
+  if (scale_rank.value) {
+    tooltipList.value = [...scale_rank.value].map(
+      (tooltipTriggerEl) => new Tooltip(tooltipTriggerEl)
+    )
+  }
 }
 
 const removeTooltip = () => {
-    if (tooltipList.value) {
-        for (const element of tooltipList.value) {
-          element.dispose()
-        }
+  if (tooltipList.value) {
+    for (const element of tooltipList.value) {
+      element.dispose()
     }
+  }
 }
 
 const scaleText = (level: number) => {

@@ -6,7 +6,6 @@
   </div>
 </template>
 <style scoped lang="scss">
-
 .hamburger {
   display: flex;
   flex-direction: column;

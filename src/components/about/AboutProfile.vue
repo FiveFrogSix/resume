@@ -9,7 +9,9 @@ library.add(faFilePdf)
       <div class="profile-box position-relative mx-auto">
         <img src="@/assets/imgs/beam-sm.png" alt="beam" class="profile shadow-sm" />
         <div class="profile-overlay">
-          <a href="#" class="link-body" target="_blank"><font-awesome-icon icon="fa-regular fa-file-pdf"  class="fs-5 align-middle"  /></a>
+          <a href="#" class="link-body" target="_blank"
+            ><font-awesome-icon icon="fa-regular fa-file-pdf" class="fs-5 align-middle"
+          /></a>
         </div>
       </div>
     </div>
@@ -17,7 +19,7 @@ library.add(faFilePdf)
 </template>
 
 <style lang="scss" scoped>
-.link-body{
+.link-body {
   color: var(--bs-body-bg);
 }
 .profile-box {
@@ -31,7 +33,9 @@ library.add(faFilePdf)
     color: var(--bs-body-bg);
     background-color: var(--bs-body-color);
     bottom: 0;
-    transition: max-height 0.25s, padding 0.1s;
+    transition:
+      max-height 0.25s,
+      padding 0.1s;
   }
   &:hover {
     .profile-overlay {

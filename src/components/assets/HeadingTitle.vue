@@ -16,8 +16,8 @@
     height: 3px;
     transform: translateY(40px);
     animation-name: slideBorder;
-    animation-duration: .25s;
-    animation-delay: .1s;
+    animation-duration: 0.25s;
+    animation-delay: 0.1s;
     animation-direction: alternate;
     animation-fill-mode: forwards;
   }
@@ -35,7 +35,7 @@
   0% {
     width: 0%;
   }
-  100%{
+  100% {
     width: 51%;
   }
 }
