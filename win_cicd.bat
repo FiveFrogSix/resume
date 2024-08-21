@@ -7,25 +7,45 @@ rmdir /s /q dist
 @REM     pause
 @REM     exit
 @REM )
-git pull
-call npm i
-call npm run format
+git pull 
+call npm i 
+call npm run format 
 
-git add .
-git commit -m "chore: pretty code by win ci/cd"
-git pull
-if errorlevel 1  ( pause exit ) 
-git push
-if errorlevel 1  ( pause exit ) 
-
-call npm run lint
-call npm run test:unit
+@REM git add .
+@REM git commit -m "chore: pretty code by win ci/cd"
+@REM git pull
+@REM if errorlevel 1  ( pause exit ) 
+@REM git push
 @REM if errorlevel 1  ( pause exit ) 
 
-call npm run build
-if errorlevel 1  ( pause exit ) 
-call win_cicd.config.bat
-if errorlevel 1  ( pause  exit ) 
-echo %FTP_SERVER%
+call npm run lint 
+call npm run test:unit 
+@REM if errorlevel 1  ( pause exit ) 
+
+call npm run build 
+if errorlevel 1  ( 
+    pause 
+    exit 
+) 
+if errorlevel 1  ( 
+    pause  
+    exit 
+) 
+
+SET /P AREYOUSURE=Are you sure deploy (Y/N)?: 
+if /I "%AREYOUSURE%" NEQ "Y" ( exit )
+
+@REM require WinSCP
+
+"C:\Program Files (x86)\WinSCP\WinSCP.exe"/script=win_cicd.ftp
+
+if %ERRORLEVEL% neq 0 (
+    echo Error occurred during FTP transfer. 
+    pause > nul
+    exit
+) else (
+    echo FTP transfer completed successfully.
+)
+rmdir /s /q dist
 pause
 exit

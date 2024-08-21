@@ -30,4 +30,4 @@ coverage
 *.tsbuildinfo
 
 # secret batch file
-*.config.bat
+*.ftp
