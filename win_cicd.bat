@@ -24,7 +24,7 @@ if errorlevel 1  (
 @REM git push
 
 call npm run lint 
-call npm run test:unit 
+call npm run test 
 @REM if errorlevel 1  ( pause exit ) 
 
 call npm run build 
