@@ -7,7 +7,7 @@ rmdir /s /q dist
 
 call npm i 
 
-if mergecode == "Y" (
+if %mergecode% == "Y" (
     call npm run format 
     echo Stage: start merge 
     git add .
