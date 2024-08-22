@@ -15,7 +15,6 @@ export default defineConfig({
   },
   test: {
     globals: true,
-    watch: false,
     environment: "happy-dom"
   }
 })
