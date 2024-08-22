@@ -21,6 +21,7 @@ if errorlevel 1  (
 git switch main
 git merge dev
 if errorlevel 1  ( 
+    git switch dev
     echo conflict: main merge dev
     pause > nul
     exit 
@@ -31,6 +32,7 @@ call npm run lint
 call npm run test:unit 
 
 if errorlevel 1  ( 
+    git switch dev
     echo Test Error
     pause exit 
 ) 
@@ -38,6 +40,7 @@ if errorlevel 1  (
 call npm run build 
 
 if errorlevel 1  ( 
+    git switch dev
     pause 
     exit 
 ) 
