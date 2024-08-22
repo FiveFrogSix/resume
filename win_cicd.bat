@@ -1,13 +1,13 @@
 @echo off
 cls
 
-set /p mergecode= Need merge code ? Y/N: 
+set /p mergecode= Need merge code ? Y/N:
 
 rmdir /s /q dist
 
 call npm i 
-
-if %mergecode% == "Y" (
+if %mergecode% == Y (
+    echo "merge code"
     call npm run format 
     echo Stage: start merge 
     git add .
