@@ -8,14 +8,14 @@ call npm run format
 
 @REM Stage: 
 echo Stage: Start
-@REM git add .
-@REM git commit -m "chore: pretty code by win ci/cd"
-@REM git pull
-@REM if errorlevel 1  ( pause exit ) 
-@REM git push
-@REM if errorlevel 1  ( pause exit ) 
-@REM git switch main
-@REM git merge dev
+git add .
+git commit -m "chore: pretty code by win ci/cd"
+git pull
+if errorlevel 1  ( pause exit ) 
+git push
+if errorlevel 1  ( pause exit ) 
+git switch main
+git merge dev
 if errorlevel 1  ( 
     echo conflict: main merge dev
     pause > nul
