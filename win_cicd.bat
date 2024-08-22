@@ -29,7 +29,11 @@ if errorlevel 1  (
 
 call npm run lint 
 call npm run test 
-@REM if errorlevel 1  ( pause exit ) 
+
+if errorlevel 1  ( 
+    echo Test Error
+    pause exit 
+) 
 
 call npm run build 
 
