@@ -11,9 +11,13 @@ echo Stage: Start
 git add .
 git commit -m "chore: pretty code by win ci/cd"
 git pull
-if errorlevel 1  ( pause exit ) 
+if errorlevel 1  ( 
+    pause exit
+) 
 git push
-if errorlevel 1  ( pause exit ) 
+if errorlevel 1  ( 
+    pause exit 
+) 
 git switch main
 git merge dev
 if errorlevel 1  ( 
