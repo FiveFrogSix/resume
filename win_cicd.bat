@@ -6,9 +6,9 @@ set /p mergecode= Need merge code ? Y/N:
 rmdir /s /q dist
 
 call npm i 
-call npm run format 
 
 if mergecode == "Y" (
+    call npm run format 
     echo Stage: start merge 
     git add .
     git commit -m "chore: pretty code by win ci/cd"
