@@ -2,31 +2,31 @@
 cls
 rmdir /s /q dist
 
-@REM Check 
 call npm i 
 call npm run format 
 
-@REM Stage: 
-echo Stage: Start
-git add .
-git commit -m "chore: pretty code by win ci/cd"
-git pull
-if errorlevel 1  ( 
-    pause exit
-) 
-git push
-if errorlevel 1  ( 
-    pause exit 
-) 
-git switch main
-git merge dev
-if errorlevel 1  ( 
-    git switch dev
-    echo conflict: main merge dev
-    pause > nul
-    exit 
-) 
+echo Stage: start merge 
+@REM git add .
+@REM git commit -m "chore: pretty code by win ci/cd"
+@REM git pull
+@REM if errorlevel 1  ( 
+@REM     pause exit
+@REM ) 
 @REM git push
+@REM if errorlevel 1  ( 
+@REM     pause exit 
+@REM ) 
+@REM git switch main
+@REM git merge dev
+@REM if errorlevel 1  ( 
+@REM     git switch dev
+@REM     echo conflict: main merge dev
+@REM     pause > nul
+@REM     exit 
+@REM ) 
+@REM git push
+echo Stage: end merge
+
 
 call npm run lint 
 call npm run test:unit 
@@ -34,7 +34,8 @@ call npm run test:unit
 if errorlevel 1  ( 
     git switch dev
     echo Test Error
-    pause exit 
+    pause 
+    exit 
 ) 
 
 call npm run build 
@@ -45,8 +46,6 @@ if errorlevel 1  (
     exit 
 ) 
 
-
-@REM require WinSCP becuase can't use ftp command
 "C:\Program Files (x86)\WinSCP\WinSCP.exe"/script=win_cicd.ftp
 
 if %ERRORLEVEL% neq 0 (
@@ -58,7 +57,6 @@ if %ERRORLEVEL% neq 0 (
 rmdir /s /q dist
 
 git switch dev
-echo Stage: End
 
 pause
 exit
