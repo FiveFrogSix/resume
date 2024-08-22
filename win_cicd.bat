@@ -28,7 +28,7 @@ if errorlevel 1  (
 @REM git push
 
 call npm run lint 
-call npm run test 
+call npm run test:unit 
 
 if errorlevel 1  ( 
     echo Test Error
