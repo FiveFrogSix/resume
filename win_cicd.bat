@@ -46,7 +46,7 @@ if %ERRORLEVEL% neq 0 (
 
 rmdir /s /q dist
 
-@REM git switch dev
+git switch dev
 echo Stage: End
 
 pause
