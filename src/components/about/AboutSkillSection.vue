@@ -26,7 +26,8 @@ const skill_list = reactive([
   { title: "Golang (GIN)", level: 2, type: "back" },
   { title: "MySQL", level: 3, type: "back" },
   { title: "Typescript", level: 0, type: "other" },
-  { title: "Nodejs", level: 0, type: "other" }
+  { title: "Nodejs", level: 0, type: "other" },
+  { title: "Unit test", level: 0, type: "other" },
 ])
 
 const skill_front = ref<TypeSkillRank[]>([])
@@ -85,12 +86,12 @@ const initReveal = () => {
 </script>
 <template>
   <div class="container pt-5 px-4 d-flex flex-column gap-5">
-    <div class="w-100">
+    <div>
       <heading-title>{{ t("about_title.skill") }}</heading-title>
     </div>
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
-      <div ref="frontLabelReveal">
+      <div class="w-100" ref="frontLabelReveal">
         <skill-label> Front End </skill-label>
       </div>
       <template v-for="(front, index) in skill_front" :key="index">
@@ -98,7 +99,7 @@ const initReveal = () => {
           <SkillRank v-bind="front" />
         </div>
       </template>
-      <div ref="backLabelReveal">
+      <div class="w-100" ref="backLabelReveal">
         <skill-label> Back End </skill-label>
       </div>
       <template v-for="(back, index) in skill_back" :key="index">
@@ -106,7 +107,7 @@ const initReveal = () => {
           <SkillRank v-bind="back" />
         </div>
       </template>
-      <div ref="otherLabelReveal">
+      <div class="w-100" ref="otherLabelReveal">
         <skill-label> Other </skill-label>
       </div>
       <template v-for="(other, index) in skill_other" :key="index">
@@ -115,6 +116,7 @@ const initReveal = () => {
         </div>
       </template>
     </div>
+
     <div class="w-100">
       <heading-title>{{ t("about_title.skill_other") }}</heading-title>
     </div>

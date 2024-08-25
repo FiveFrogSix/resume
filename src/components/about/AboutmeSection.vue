@@ -2,13 +2,19 @@
 import ScrollReveal from "scrollreveal"
 import { onMounted, ref } from "vue"
 import AboutInformation from "@/components/about/AboutInformation.vue"
-import AboutContact from "@/components/about/AboutContact.vue"
 import AboutProfile from "@/components/about/AboutProfile.vue"
 import { useI18n } from "vue-i18n"
+import AboutIPersonel from "@/components/about/AboutIPersonel.vue"
 
 const { t } = useI18n()
 const information = ref()
 const contact = ref()
+
+const info_list = ref([
+  { title: "วันเกิด", contact: "22 Nov 1995", type: "date" },
+  { title: "อายุ", contact: "29", type: "age" },
+])
+
 const contact_lsit = ref([
   { title: t("phone"), contact: "0802399635", type: "phone" },
   { title: t("email"), contact: "tirawat.saijai@gmail.com", type: "email" },
@@ -33,9 +39,9 @@ const initScrollReveal = () => {
         </div>
         <hr />
         <div class="row row-cols-1 row-cols-lg-3">
-          <div class="col" v-for="(item, index) in contact_lsit" :key="index">
+          <div class="col" v-for="(item, index) in info_list" :key="index">
             <div ref="contact">
-              <AboutContact :title="item.title" :type="item.type" :value="item.contact" />
+              <AboutIPersonel :title="item.title" :type="item.type" :value="item.contact" />
             </div>
           </div>
         </div>
@@ -43,7 +49,7 @@ const initScrollReveal = () => {
         <div class="row row-cols-1 row-cols-lg-3">
           <div class="col" v-for="(item, index) in contact_lsit" :key="index">
             <div ref="contact">
-              <AboutContact :title="item.title" :type="item.type" :value="item.contact" />
+              <AboutIPersonel :title="item.title" :type="item.type" :value="item.contact" />
             </div>
           </div>
         </div>

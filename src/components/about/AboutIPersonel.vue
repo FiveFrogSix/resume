@@ -20,7 +20,7 @@ const props = defineProps({
 const getContact = computed(() => {
   const type = props.type
   const value = props.value
-  let result = ""
+  let result = "" as any
   let target = ""
   let title = value
   if (type === "phone") {
@@ -31,6 +31,9 @@ const getContact = computed(() => {
   } else if (type === "link") {
     result = "https://" + value
     target = "_blank"
+  }else{
+    result = null
+    title = value
   }
   return { result, target, title }
 })
