@@ -39,6 +39,14 @@ const initScrollReveal = () => {
             </div>
           </div>
         </div>
+        <hr />
+        <div class="row row-cols-1 row-cols-lg-3">
+          <div class="col" v-for="(item, index) in contact_lsit" :key="index">
+            <div ref="contact">
+              <AboutContact :title="item.title" :type="item.type" :value="item.contact" />
+            </div>
+          </div>
+        </div>
       </div>
       <div class="col my-auto">
         <AboutProfile />

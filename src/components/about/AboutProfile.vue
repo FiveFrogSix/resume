@@ -1,7 +1,17 @@
 <script setup lang="ts">
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons"
+import { onMounted, ref } from "vue"
+import { useI18n } from "vue-i18n"
+const { locale } = useI18n({ useScope: "global" })
 library.add(faFilePdf)
+
+const fiilepdf = ref("")
+
+onMounted(() => {
+  fiilepdf.value = `/pdf/tirawat_saijai_${locale.value}.pdf`
+  
+})
 </script>
 <template>
   <div>
@@ -9,7 +19,7 @@ library.add(faFilePdf)
       <div class="profile-box position-relative mx-auto">
         <img src="@/assets/imgs/beam-sm.png" alt="beam" class="profile shadow-sm" />
         <div class="profile-overlay">
-          <a href="#" class="link-body" target="_blank"
+          <a :href="fiilepdf" class="link-body" target="_blank"
             ><font-awesome-icon icon="fa-regular fa-file-pdf" class="fs-5 align-middle"
           /></a>
         </div>
