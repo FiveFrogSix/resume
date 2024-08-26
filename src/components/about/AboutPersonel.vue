@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { DurationDate, FormatDate } from "@/composables/useDate"
 import { FormatPhone } from "@/composables/useFormat"
 import { computed } from "vue"
 
@@ -31,7 +32,16 @@ const getContact = computed(() => {
   } else if (type === "link") {
     result = "https://" + value
     target = "_blank"
-  }else{
+  } else if (type === "date") {
+    const date = FormatDate(value)
+    console.log(date);
+    result = null
+    title = date["ddMMMyyyy"]
+  } else if (type === "age") {
+    const { years } = DurationDate(value)
+    result = null
+    title = String(years)
+  } else {
     result = null
     title = value
   }

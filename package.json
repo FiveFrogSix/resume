@@ -28,6 +28,7 @@
     "@vueuse/core": "^10.11.0",
     "axios": "^1.7.3",
     "bootstrap": "^5.3.3",
+    "date-fns": "^3.6.0",
     "pinia": "^2.1.7",
     "sass": "1.77.6",
     "scrollreveal": "^4.0.9",

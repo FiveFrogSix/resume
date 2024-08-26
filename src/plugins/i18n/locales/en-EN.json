@@ -34,6 +34,9 @@
   },
   "phone": "Phone",
   "website": "Website",
+  "name": "Name",
+  "birthdate": "Birthdate",
+  "age": "Age",
   "about_title": {
     "skill": "Developer Skill",
     "skill_other": "Other",

@@ -81,7 +81,6 @@ const initReveal = () => {
   ScrollReveal().reveal(otherLabelReveal.value)
   ScrollReveal().reveal(skillReavel.value, defaultOptions)
   ScrollReveal().reveal(otherReavel.value, defaultOptions)
-  console.log("testdasdsadas")
 }
 </script>
 <template>
