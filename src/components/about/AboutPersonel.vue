@@ -34,7 +34,7 @@ const getContact = computed(() => {
     target = "_blank"
   } else if (type === "date") {
     const date = FormatDate(value)
-    console.log(date);
+    console.log(date)
     result = null
     title = date["ddMMMyyyy"]
   } else if (type === "age") {

@@ -27,7 +27,7 @@ const skill_list = reactive([
   { title: "MySQL", level: 3, type: "back" },
   { title: "Typescript", level: 0, type: "other" },
   { title: "Nodejs", level: 0, type: "other" },
-  { title: "Unit test", level: 0, type: "other" },
+  { title: "Unit test", level: 0, type: "other" }
 ])
 
 const skill_front = ref<TypeSkillRank[]>([])

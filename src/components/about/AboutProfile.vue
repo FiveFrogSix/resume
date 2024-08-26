@@ -10,7 +10,6 @@ const fiilepdf = ref("")
 
 onMounted(() => {
   fiilepdf.value = `/pdf/tirawat_saijai_${locale.value}.pdf`
-  
 })
 </script>
 <template>

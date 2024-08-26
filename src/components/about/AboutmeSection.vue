@@ -11,9 +11,13 @@ const information = ref()
 const contact = ref()
 
 const info_list = ref([
-  { title: t("name"), contact: `${t("personal.fullname")} (${t("personal.nickname")})`, type: "text" },
+  {
+    title: t("name"),
+    contact: `${t("personal.fullname")} (${t("personal.nickname")})`,
+    type: "text"
+  },
   { title: t("birthdate"), contact: "1995-11-22", type: "date" },
-  { title: t("age"), contact: "1995-11-22", type: "age" },
+  { title: t("age"), contact: "1995-11-22", type: "age" }
 ])
 
 const contact_lsit = ref([
