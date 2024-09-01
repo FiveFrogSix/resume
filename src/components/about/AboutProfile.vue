@@ -62,5 +62,8 @@ onMounted(() => {
   .profile {
     width: 100%;
   }
+  .profile-box {
+    width: 100%;
+  }
 }
 </style>
