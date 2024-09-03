@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import ScrollReveal from "scrollreveal"
-import AboutMeSection from "@/components/about/AboutMeSection.vue"
+import AboutMeSection from "@/components/about/AboutmeSection.vue"
 import AboutSkillSection from "@/components/about/AboutSkillSection.vue"
 import AboutExperience from "@/components/about/AboutExperience.vue"
 import AboutEducation from "@/components/about/AboutEducation.vue"
