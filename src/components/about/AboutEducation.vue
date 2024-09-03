@@ -30,7 +30,7 @@ const TimelineEducate = ref([
     end_date_type: "educate",
     sub_date_text: "",
     title: `${t("education.hi_vocat")} ${t("education.hi_vocat_brach")}`,
-    sub_title:  t("education.hi_vocat_place"),
+    sub_title: t("education.hi_vocat_place"),
     detail: {
       title: "",
       list: []
