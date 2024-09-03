@@ -2,6 +2,11 @@
 import { onBeforeUnmount, onMounted, ref } from "vue"
 import { useI18n } from "vue-i18n"
 import { Tooltip } from "bootstrap"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faStar as fasStar, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons"
+import { faStar } from "@fortawesome/free-regular-svg-icons"
+
+library.add(faStar, fasStar, faStarHalfStroke)
 
 const { t } = useI18n()
 const scale_rank = ref<HTMLDivElement[] | null>(null)
@@ -41,12 +46,17 @@ const removeTooltip = () => {
   }
 }
 
-const scaleText = (level: number) => {
-  let text = "Poor"
-  if (level === 5) text = "Excellent"
-  else if (level === 4) text = "Very good"
-  else if (level === 3) text = "Good"
-  else if (level === 2) text = "Fair"
+const scaleText = (star: number, level: number): any => {
+  let text: any = `${star} ${t("year_unit", star)}`
+
+  if (star === level) {
+    text = `${star} ${t("year_unit", star)}`
+  } else if (level < 1) {
+    text = t("lessoneyear")
+  } else {
+    text = null
+  }
+
   return text
 }
 </script>
@@ -67,9 +77,10 @@ const scaleText = (level: number) => {
               class="text-warning scale-star"
               data-bs-toggle="tooltip"
               data-bs-placement="top"
-              :data-bs-title="scaleText(star)"
+              :data-bs-title="scaleText(star, level)"
             >
-              <font-awesome-icon v-if="level < star" icon="fa-regular fa-star" />
+              <font-awesome-icon v-if="level < 1 && star < 2" icon="fa-solid fa-star-half-stroke" />
+              <font-awesome-icon v-else-if="level < star" icon="fa-regular fa-star" />
               <font-awesome-icon v-else icon="fa-solid fa-star" />
             </div>
           </template>

@@ -4,35 +4,26 @@ import { faCircle, faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-ic
 import { onMounted, ref } from "vue"
 import { useI18n } from "vue-i18n"
 
-defineProps({
-  start_date: {
-    type: String,
-    default: ""
-  },
-  end_date: {
-    type: [String],
-    default: ""
-  },
-  end_date_type: {
-    type: String,
-    default: ""
-  },
-  sub_date_text: {
-    type: String
-  },
-  title: {
-    type: String
-  },
-  sub_title: {
-    type: String
-  },
-  detail: {
-    type: Object,
-    default() {
-      return {}
-    }
-  }
-})
+interface TimelineObject {
+  offset?: boolean
+  start_date: string
+  end_date: any
+  sub_date_text: string
+  title: string
+  sub_title: string
+  detail: TimelineDetail
+  end_date_type: string
+}
+
+interface TimelineDetail {
+  title: string
+  list: {
+    title: string
+    list: string[]
+  }[]
+}
+
+defineProps<TimelineObject>()
 
 library.add(faCircle, faAngleDown, faAngleUp)
 const { t } = useI18n()
@@ -85,7 +76,6 @@ const morelessDetail = () => {
     detail_button.value.classList.add("detail-hidden")
     more_btn.value = t("show_more")
   }
-  console.log(more_btn.value)
 }
 
 const parseDate = (start_str: string, end_str: string, type = "") => {
@@ -113,9 +103,9 @@ const parseDate = (start_str: string, end_str: string, type = "") => {
   }
 
   if (type === "exp") {
-    if (!end_str) result = `${start_result} - ปัจจุบัน`
+    if (!end_str) result = `${start_result} - ${t("current")}`
   } else if (type === "educate") {
-    result = "จบการศึกษา"
+    result = t("graduated")
   }
   return result
 }

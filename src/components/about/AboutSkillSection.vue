@@ -3,28 +3,29 @@ import ScrollReveal from "scrollreveal"
 import { onBeforeMount, onMounted, reactive, ref } from "vue"
 import { useI18n } from "vue-i18n"
 import { library } from "@fortawesome/fontawesome-svg-core"
-import { faStar as fasStar, faCheck } from "@fortawesome/free-solid-svg-icons"
-import { faStar } from "@fortawesome/free-regular-svg-icons"
+import { faCheck } from "@fortawesome/free-solid-svg-icons"
+import { faStar as fasStar } from "@fortawesome/free-solid-svg-icons"
 import HeadingTitle from "../assets/HeadingTitle.vue"
 import SkillLabel from "../assets/Skill/SkillLabel.vue"
 import SkillRank from "../assets/Skill/SkillRank.vue"
 import type { SkillRank as TypeSkillRank } from "@/types/array"
-library.add(faStar, fasStar, faCheck)
+library.add(faCheck, fasStar)
 
 const { t } = useI18n()
 const skill_list = reactive([
   { title: "HTML", level: 4, type: "front" },
   { title: "Css", level: 4, type: "front" },
   { title: "Sass & Scss", level: 3, type: "front" },
-  { title: "Css framework & other", level: 4, type: "front" },
+  { title: "Css framework & other", level: 3, type: "front" },
   { title: "Javascript", level: 4, type: "front" },
   { title: "Library Javascript", level: 3, type: "front" },
-  { title: "Vuejs", level: 4, type: "front" },
-  { title: "Nuxtjs", level: 3, type: "front" },
+  { title: "Vuejs", level: 2, type: "front" },
+  { title: "Nuxtjs", level: 1, type: "front" },
   { title: "PHP", level: 3, type: "back" },
-  { title: "Laravel", level: 2, type: "back" },
-  { title: "Golang (GIN)", level: 2, type: "back" },
-  { title: "MySQL", level: 3, type: "back" },
+  { title: "Laravel", level: 1, type: "back" },
+  { title: "Codeigniter 3", level: 1, type: "back" },
+  { title: "Golang (GIN)", level: 1, type: "back" },
+  { title: "MySQL", level: 4, type: "back" },
   { title: "Typescript", level: 0, type: "other" },
   { title: "Nodejs", level: 0, type: "other" },
   { title: "Unit test", level: 0, type: "other" }
@@ -48,11 +49,14 @@ const other_list = ref([
   "Chat-gpt or other ai chat",
   "Read document",
   "Componnet Style",
-  "Node package manager",
+  "Node package",
   "Like good practice",
   "Problem Solving",
   "CSR/SSR",
-  "Pagination/Infinity Scroll SSR"
+  "Pagination/Infinity Scroll SSR",
+  "Experience with web views (True Money)",
+  "Experience in insurance industry",
+  "Experience developing e-commerce"
 ])
 
 onBeforeMount(() => {
@@ -90,6 +94,10 @@ const initReveal = () => {
     </div>
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+      <div class="w-100 text-center text-warning">
+        <font-awesome-icon icon="fa-solid fa-star" />
+        <span class="text-body"> = 1 {{ t("year_unit") }}</span>
+      </div>
       <div class="w-100" ref="frontLabelReveal">
         <skill-label> Front End </skill-label>
       </div>

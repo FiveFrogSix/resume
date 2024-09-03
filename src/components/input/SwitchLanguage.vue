@@ -6,6 +6,12 @@ import { useNavigatorLanguage } from "@vueuse/core"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faEarthAsia } from "@fortawesome/free-solid-svg-icons"
 
+defineProps({
+  dropMenuClass: {
+    default: "dropdown-menu-start",
+    type: String
+  }
+})
 library.add(faEarthAsia)
 
 const { locale } = useI18n({ useScope: "global" })
@@ -39,7 +45,7 @@ const changeLang = (e: Event) => {
     <button class="btn p-0 fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
       <font-awesome-icon icon="fa-solid fa-earth-asia" />
     </button>
-    <ul class="dropdown-menu dropdown-menu-custom dropdown-menu-end">
+    <ul class="dropdown-menu dropdown-menu-custom" :class="dropMenuClass">
       <li>
         <button
           value="th-TH"

@@ -37,9 +37,10 @@
   "name": "Name",
   "birthdate": "Birthdate",
   "age": "Age",
+  "ัexp_year": "Experience",
   "about_title": {
     "skill": "Developer Skill",
-    "skill_other": "Other",
+    "skill_other": "Highlight",
     "experience": "Experience",
     "education": "Education"
   },
@@ -59,5 +60,71 @@
     "oct": "Oct",
     "nov": "Nov",
     "dec": "Dec"
+  },
+  "year_unit": "year | years",
+  "month_unit": "month | months",
+  "current": "Current",
+  "graduated": "Graduated",
+  "lessoneyear": "Less than 1 year or currently learning.",
+  "education": {
+    "be_degree": "Bachelor's Degree, ",
+    "be_degree_branch": "Information Technology",
+    "be_degree_place": "Thonburi University",
+    "hi_vocat": "Higher Vocational Certificate, ",
+    "hi_vocat_brach": "Business Computer",
+    "hi_vocat_place": "Mubankru Technology College"
+  },
+  "experience": {
+    "go": {
+      "name": "GO (THAILAND) COMPANY LIMITED",
+      "detail": "At GO (THAILAND), I primarily work with ANC Insurtech. I am responsible for both frontend and backend of the website prakun.com. There are some products that are not listed for sale or are not in use, and some that cannot be fully described in detail.",
+      "list1": "Responsible for both frontend and backend of the website prakun.com.",
+      "list1_1": "Responsible for nearly all aspects of the frontend for products on the website. The only part not handled is sending APIs to request policies from insurance companies.",
+      "list1_2": "Some APIs for retrieving various data points (using both PHP and Golang).",
+      "list2": "Developed the website for foreign labor insurance at prakun.com/immigration.",
+      "list2_1": "Responsible for almost everything except for exporting policies to insurance companies.",
+      "list3": "I have previously worked with TrueMoney Wallet (Webview) for insurance sales.",
+      "list3_1": "Responsible for the frontend."
+    },
+    "freelance": {
+      "name": "Freelance",
+      "list1": "Developed the e-commerce website Encore Fashion using Vue 3, Vite, Nuxt.js, and Golang.",
+      "list1_1": "Responsible for the backend management system (excluding APIs).",
+      "list1_2": "Assisted with the frontend using Nuxt.js (worked on some parts later).",
+      "list1_3": "Modified APIs for the frontend (using Gin Golang).",
+      "list1_4": "Involved in database design.",
+      "list1_5": "Set up servers on Lightsail with Ubuntu 20 for both frontend and backend (2 servers).",
+      "list1_6": "Installed SSL from GoDaddy.",
+      "list1_7": "Connected domain from GoDaddy and set up reverse proxy using Nginx.",
+      "list2": "Developed frontend pages without API integration (Vue 3 Vite).",
+      "list2_1": "Client hired specifically for the frontend work.",
+      "list3": "Created the job application website for Sahasamakkhi Services using Vue 3 Vite and either Lumen Framework or Laravel.",
+      "list3_1": "Developed the back office system, including database design.",
+      "list4": "Built the task reporting system for TTP CARGO using Vue 3 Vite.",
+      "list4_1": "Worked on the frontend and back office parts of the system.",
+      "list4_2": "The task reporting system involves multiple levels of forwarding.",
+      "list4_3": "The workflow is similar to chat, with regular file attachments.",
+      "list4_4": "Assisted in database design.",
+      "list5": "Took on server setup tasks for 2 projects:",
+      "list5_1": "Set up and maintained the backend server for UPL (Thailand).",
+      "list5_2": "Assisted in setting up the server for Mahidol University’s research project."
+    },
+    "bbp": {
+      "name": "Big-Ben (Paints) Company Limited",
+      "list1": "Developed company websites for both frontend and backend.",
+      "list1_1": "Implemented CRUD functionalities.",
+      "list1_2": "Created an e-commerce website.",
+      "list1_3": "Developed a backend system connected to the company’s local server.",
+      "list1_4": "Designed the database system.",
+      "list1_5": "Designed UX/UI (partially).",
+      "list2": "Created a mockup website for a startup.",
+      "list3": "Set up company email systems (Linux).",
+      "list4": "Handled miscellaneous tasks:",
+      "list4_1": "Provided support for network or server issues.",
+      "list4_2": "Monitored and maintained company CCTV (including a small project to display cameras on the website with automatic rotation).",
+      "list4_3": "Managed computer equipment issues (mice, keyboards, etc.).",
+      "list4_4": "Installed a facial recognition system for data transmission to the main company server.",
+      "list4_5": "Trained users on system usage."
+    }
   }
 }

@@ -17,7 +17,7 @@ const info_list = ref([
     type: "text"
   },
   { title: t("birthdate"), contact: "1995-11-22", type: "date" },
-  { title: t("age"), contact: "1995-11-22", type: "age" }
+  { title: t("ัexp_year"), contact: "2020-01-23", type: "fullage" }
 ])
 
 const contact_lsit = ref([

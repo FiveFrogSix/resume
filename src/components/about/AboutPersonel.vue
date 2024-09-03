@@ -2,6 +2,7 @@
 import { DurationDate, FormatDate } from "@/composables/useDate"
 import { FormatPhone } from "@/composables/useFormat"
 import { computed } from "vue"
+import { useI18n } from "vue-i18n"
 
 const props = defineProps({
   title: {
@@ -17,6 +18,8 @@ const props = defineProps({
     type: [String]
   }
 })
+
+const { t } = useI18n()
 
 const getContact = computed(() => {
   const type = props.type
@@ -34,13 +37,19 @@ const getContact = computed(() => {
     target = "_blank"
   } else if (type === "date") {
     const date = FormatDate(value)
-    console.log(date)
+    const { years } = DurationDate(value)
     result = null
-    title = date["ddMMMyyyy"]
+    title = `${date["ddMMMyyyy"]} (${years})`
   } else if (type === "age") {
     const { years } = DurationDate(value)
     result = null
     title = String(years)
+  } else if (type === "fullage") {
+    const { years, months } = DurationDate(value)
+    let y: number = years ? years : 0
+    let m: number = months ? months : 0
+    result = null
+    title = `${years} ${t("year_unit", y)} ${months} ${t("month_unit", m)}`
   } else {
     result = null
     title = value
