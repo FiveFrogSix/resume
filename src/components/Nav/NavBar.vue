@@ -2,22 +2,46 @@
 import type { Menu } from "@/types/menu"
 import SwitchLanguage from "@/components/input/SwitchLanguage.vue"
 import SwitchTheme from "@/components/input/SwitchTheme.vue"
-import { computed, onBeforeMount, onBeforeUnmount, onMounted, ref, watch } from "vue"
+import { computed, onBeforeMount, onBeforeUnmount, onMounted, ref, toRefs, watch } from "vue"
 import { RouterLink } from "vue-router"
 import { useI18n } from "vue-i18n"
 import IconHamBurger from "@/components/assets/IconHamBurger.vue"
-
+import { useScroll } from "@vueuse/core"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faHouse, faUser, faFile, faEnvelope } from "@fortawesome/free-solid-svg-icons"
-
 library.add(faHouse, faUser, faFile, faEnvelope)
 
 const menu_element = ref()
+const navbar = ref()
+const navblank = ref()
 const menu_list = ref<Menu[]>([])
 const { t, locale } = useI18n()
 
+const { y, directions } = useScroll(window)
+const { top, bottom } = toRefs(directions)
+
 watch(locale, () => {
   setMenuList()
+})
+
+watch(top, (newValue) => {
+  if (newValue) {
+    navblank.value.style.height = `${navbar.value.clientHeight}px`
+    navbar.value.classList.add("position-fixed", "bg-body-tertiary", "anime-fade")
+  }
+})
+watch(bottom, (newValue) => {
+  if (newValue) {
+    navblank.value.style.height = `0px`
+    navbar.value.classList.remove("position-fixed", "bg-body-tertiary", "anime-fade")
+  }
+})
+
+watch(y, (newValue) => {
+  if (newValue === 0) {
+    navbar.value.classList.remove("position-fixed", "bg-body-tertiary")
+    navblank.value.style.height = "0px"
+  }
 })
 
 const getMenuList = computed(() => {
@@ -103,9 +127,7 @@ const toggleMenuSmall = () => {
 
 <template>
   <!-- MD -->
-
-  <!-- bg-body-tertiary -->
-  <nav ref="navbar" class="navbar navbar-expand d-none d-md-block anime-fade z-3">
+  <nav ref="navbar" class="navbar navbar-expand d-none d-md-block anime-fade z-3 w-100">
     <div class="container-fluid">
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mx-auto">
@@ -131,6 +153,7 @@ const toggleMenuSmall = () => {
       </div>
     </div>
   </nav>
+  <div ref="navblank"></div>
 
   <div class="position-fixed top-50 end-0 translate-middle-y d-none d-md-block anime-fade">
     <div class="d-flex flex-column gap-2 text-end right-menu">
