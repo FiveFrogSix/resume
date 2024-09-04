@@ -3,7 +3,7 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import { faCircle, faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons"
 import { onMounted, ref } from "vue"
 import { useI18n } from "vue-i18n"
-import type { TimelineObject } from '@/types/timeline'
+import type { TimelineObject } from "@/types/timeline"
 
 defineProps<TimelineObject>()
 
