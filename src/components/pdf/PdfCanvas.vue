@@ -89,7 +89,7 @@ const info = ref(Information)
       <p class="h-custom">{{ t("about_title.experience") }}</p>
     </div>
     <!-- education -->
-    <div >
+    <div>
       <p class="h-custom">{{ t("about_title.education") }}</p>
       <div class="f-sarabun" v-for="(educate, index) in TimelineEducate" :key="index">
         <span class="fw-600">{{ educate.title }}, </span>
