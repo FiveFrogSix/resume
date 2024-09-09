@@ -33,6 +33,19 @@ const router = createRouter({
           component: () => import("@/views/ContactView.vue")
         }
       ]
+    },
+    {
+      path: "/pdf",
+      name: "PDF",
+      component: () => import("@/layouts/pdf/LayoutPdfView.vue"),
+      redirect: { name: "PdfHome" },
+      children: [
+        {
+          path: "",
+          name: "PdfHome",
+          component: () => import("@/views/Pdf/PdfHomeView.vue")
+        }
+      ]
     }
   ]
 })

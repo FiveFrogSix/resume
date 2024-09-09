@@ -9,27 +9,13 @@ import HeadingTitle from "../assets/HeadingTitle.vue"
 import SkillLabel from "../assets/Skill/SkillLabel.vue"
 import SkillRank from "../assets/Skill/SkillRank.vue"
 import type { SkillRank as TypeSkillRank } from "@/types/array"
+import { useInformationeStore } from "@/stores/information"
 library.add(faCheck, fasStar)
 
+const { SkillList } = useInformationeStore()
+
 const { t } = useI18n()
-const skill_list = reactive([
-  { title: "HTML", level: 4, type: "front" },
-  { title: "Css", level: 4, type: "front" },
-  { title: "Sass & Scss", level: 3, type: "front" },
-  { title: "Css framework & other", level: 3, type: "front" },
-  { title: "Javascript", level: 4, type: "front" },
-  { title: "Library Javascript", level: 3, type: "front" },
-  { title: "Vuejs", level: 2, type: "front" },
-  { title: "Nuxtjs", level: 1, type: "front" },
-  { title: "PHP", level: 3, type: "back" },
-  { title: "Laravel", level: 1, type: "back" },
-  { title: "Codeigniter 3", level: 1, type: "back" },
-  { title: "Golang (GIN)", level: 1, type: "back" },
-  { title: "MySQL", level: 4, type: "back" },
-  { title: "Typescript", level: 0, type: "other" },
-  { title: "Nodejs", level: 0, type: "other" },
-  { title: "Unit test", level: 0, type: "other" }
-])
+const skill_list = reactive(SkillList)
 
 const skill_front = ref<TypeSkillRank[]>([])
 const skill_back = ref<TypeSkillRank[]>([])

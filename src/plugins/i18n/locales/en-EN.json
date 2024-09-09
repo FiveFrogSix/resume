@@ -24,7 +24,7 @@
   },
   "confirm": "OK",
   "aboutme": {
-    "present": "Hello, my nickname is Beam. I've been working as a Web Developer for about 3 years. Currently, I’m a Fullstack developer, though I primarily focus on Frontend work. I also handle some Backend tasks using PHP (with Laravel in certain parts) and Golang (Gin framework). On the Frontend, I mostly work with Vue3 and Vite, though I occasionally deal with older projects that use PHP and JavaScript. I prefer Frontend development over Backend, but I'm capable of doing both, with a stronger proficiency in Frontend.",
+    "present": "I have been working as a Web Developer for about 3 years, including over a year of freelancing during my spare time. Currently, I work at an insurance brokerage as a Fullstack Developer, but I primarily focus on Frontend. I also handle some Backend tasks using PHP and Golang (Gin framework). On the Frontend, I mostly work with Vue3 and Vite, although there are some older projects using PHP and JavaScript. While I prefer working on Frontend, I am capable of doing both, with greater proficiency in Frontend. During my freelancing work, I exclusively used Vue.js and Nuxt.js. Currently, I am planning to explore developing for LINE OA with a former team member in my free time.",
     "list1": "I am available to work 100% in the office or in a hybrid model, depending on the company's conditions.",
     "list2": "I am eager to learn new tech stacks or techniques.",
     "list3": "The reason I'm seeking a new job is that I'm looking for new challenges, opportunities to learn new things, and to further develop my skills and become even better at what I do.",
@@ -77,7 +77,7 @@
   "experience": {
     "go": {
       "name": "GO (THAILAND) COMPANY LIMITED",
-      "detail": "At GO (THAILAND), I primarily work with ANC Insurtech. I am responsible for both frontend and backend of the website prakun.com. There are some products that are not listed for sale or are not in use, and some that cannot be fully described in detail.",
+      "detail": "At GO (THAILAND), I primarily work with ANC Insurtech, responsible for both the frontend and backend of the website prakun.com. The products I've worked on include cancer insurance, room charge insurance, life insurance, travel insurance, income compensation insurance, annual/monthly accident insurance, child insurance, annual/monthly car insurance, compulsory motor insurance, and foreign worker insurance. Additionally, there are some products that are either not yet listed for sale, not in use, or not directly related to insurance.",
       "list1": "Responsible for both frontend and backend of the website prakun.com.",
       "list1_1": "Responsible for nearly all aspects of the frontend for products on the website. The only part not handled is sending APIs to request policies from insurance companies.",
       "list1_2": "Some APIs for retrieving various data points (using both PHP and Golang).",

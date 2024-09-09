@@ -5,10 +5,13 @@ import AboutInformation from "@/components/about/AboutInformation.vue"
 import AboutProfile from "@/components/about/AboutProfile.vue"
 import { useI18n } from "vue-i18n"
 import AboutPersonel from "@/components/about/AboutPersonel.vue"
+import { useInformationeStore } from "@/stores/information"
 
 const { t } = useI18n()
+const informationStore = useInformationeStore()
 const information = ref()
 const contact = ref()
+const info = ref(informationStore.Information)
 
 const info_list = ref([
   {
@@ -21,9 +24,9 @@ const info_list = ref([
 ])
 
 const contact_lsit = ref([
-  { title: t("phone"), contact: "0802399635", type: "phone" },
-  { title: t("email"), contact: "tirawat.saijai@gmail.com", type: "email" },
-  { title: t("website"), contact: "fivefrogsix.com", type: "link" }
+  { title: info.value.phone.label, contact: info.value.phone.value, type: "phone" },
+  { title: info.value.email.label, contact: info.value.email.value, type: "email" },
+  { title: info.value.website.label, contact: "fivefrogsix.com", type: "link" }
 ])
 
 onMounted(() => {
