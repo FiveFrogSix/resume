@@ -9,7 +9,7 @@ library.add(faFilePdf)
 const fiilepdf = ref("")
 
 onMounted(() => {
-  fiilepdf.value = `/pdf/tirawat_saijai_${locale.value}.pdf`
+  fiilepdf.value = `/documents/pdf/tirawat_saijai_${locale.value}.pdf`
 })
 </script>
 <template>
