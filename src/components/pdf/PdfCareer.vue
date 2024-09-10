@@ -24,9 +24,10 @@ defineProps({
 <template>
   <div>
     <p class="text-heading">{{ position }}, {{ company }}</p>
-    <p class="text-detail f-sarabun ">{{ detail }}</p>
+    <p class="text-detail f-sarabun">{{ detail }}</p>
     <p class="text-tool">
-      <span class="text-tool-sub">{{ t("tool") }}</span>: {{ tools }}
+      <span class="text-tool-sub">{{ t("tool") }}</span
+      >: {{ tools }}
     </p>
   </div>
 </template>
@@ -43,7 +44,7 @@ p {
 .text-detail {
   text-indent: 30px;
 }
-.text-tool-sub{
-    font-weight: 500;
+.text-tool-sub {
+  font-weight: 500;
 }
 </style>

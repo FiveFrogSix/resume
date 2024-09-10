@@ -18,7 +18,6 @@ const { t } = useI18n()
 const skill_list = reactive(SkillList)
 const other_list = reactive(HighlightList)
 
-
 const skill_front = ref<TypeSkillRank[]>([])
 const skill_back = ref<TypeSkillRank[]>([])
 const skill_other = ref<TypeSkillRank[]>([])
@@ -28,7 +27,6 @@ const otherReavel = ref()
 const frontLabelReveal = ref()
 const backLabelReveal = ref()
 const otherLabelReveal = ref()
-
 
 onBeforeMount(() => {
   filterRank()
