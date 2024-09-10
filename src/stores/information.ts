@@ -51,5 +51,23 @@ export const useInformationeStore = defineStore("information", () => {
     { title: "Unit test", level: 0, type: "other" }
   ])
 
-  return { Information, SkillList }
+  const HighlightList = ref([
+    "Responsive",
+    "Dark theme",
+    "Multilanguage",
+    "Version Control/Git",
+    "Chat-gpt or other ai chat",
+    "Read document",
+    "Componnet Style",
+    "Node package",
+    "Like good practice",
+    "Problem Solving",
+    "CSR/SSR",
+    "Pagination/Infinity Scroll SSR",
+    "Experience with web views (True Money)",
+    "Experience in insurance industry",
+    "Experience developing e-commerce"
+  ])
+
+  return { Information, SkillList, HighlightList }
 })

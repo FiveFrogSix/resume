@@ -12,10 +12,12 @@ import type { SkillRank as TypeSkillRank } from "@/types/array"
 import { useInformationeStore } from "@/stores/information"
 library.add(faCheck, fasStar)
 
-const { SkillList } = useInformationeStore()
+const { SkillList, HighlightList } = useInformationeStore()
 
 const { t } = useI18n()
 const skill_list = reactive(SkillList)
+const other_list = reactive(HighlightList)
+
 
 const skill_front = ref<TypeSkillRank[]>([])
 const skill_back = ref<TypeSkillRank[]>([])
@@ -27,23 +29,6 @@ const frontLabelReveal = ref()
 const backLabelReveal = ref()
 const otherLabelReveal = ref()
 
-const other_list = ref([
-  "Responsive",
-  "Dark theme",
-  "Multilanguage",
-  "Version Control/Git",
-  "Chat-gpt or other ai chat",
-  "Read document",
-  "Componnet Style",
-  "Node package",
-  "Like good practice",
-  "Problem Solving",
-  "CSR/SSR",
-  "Pagination/Infinity Scroll SSR",
-  "Experience with web views (True Money)",
-  "Experience in insurance industry",
-  "Experience developing e-commerce"
-])
 
 onBeforeMount(() => {
   filterRank()

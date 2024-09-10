@@ -11,9 +11,9 @@ import PdfCanvas from "@/components/pdf/PdfCanvas.vue"
 <style lang="scss" scoped>
 .a4 {
   border: 1px solid #000;
-  width: 210mm;
-  height: 297mm;
-  padding: 1rem;
+  width: 297mm;
+  height: 420mm;
+  padding: 2rem;
 }
 @media print {
   .lang {
