@@ -124,9 +124,16 @@ const highlight_lsit = ref([...HighlightList])
         <span> {{ educate.sub_title }}</span>
       </div>
     </div>
-    <div class="col-5 text-center mx-auto mt-3">
-      <img src="@/assets/imgs/qrcode_resume.png" class="img-fluid" style="width: 40%" />
-      <p>Website Resume Tools: Vue3, Vite, typescript, Sass, Pinia</p>
+    <div class="row g-0">
+      <div class="col text-center mx-auto mt-3">
+        <img src="@/assets/imgs/qrcode_resume.png" class="img-fluid" style="width: 35%" />
+        <p>Website Resume Tools: Vue3, Vite, typescript, Sass, Pinia</p>
+      </div>
+      <div class="col text-end position-relative">
+        <div class="position-profile">
+          <img src="@/assets/imgs/beam-face.png" class="img-fluid" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -161,5 +168,10 @@ p {
 .list {
   list-style-position: inside;
   padding-left: 0rem;
+}
+.position-profile {
+  position: absolute;
+  right: 10px;
+  top: -90px;
 }
 </style>
