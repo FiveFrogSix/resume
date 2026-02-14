@@ -33,22 +33,25 @@ export const useInformationeStore = defineStore("information", () => {
   })
 
   const SkillList = reactive([
-    { title: "HTML", level: 4, type: "front" },
-    { title: "Css", level: 4, type: "front" },
-    { title: "Sass & Scss", level: 3, type: "front" },
-    { title: "Css framework or lib", level: 3, type: "front" },
-    { title: "Javascript", level: 4, type: "front" },
-    { title: "Javascript Library", level: 3, type: "front" },
-    { title: "Vuejs", level: 2, type: "front" },
-    { title: "Nuxtjs", level: 1, type: "front" },
+    { title: "HTML", level: 5, type: "front" },
+    { title: "Css", level: 5, type: "front" },
+    { title: "Scss", level: 4, type: "front" },
+    { title: "Css framework or lib", level: 4, type: "front" },
+    { title: "Javascript", level: 5, type: "front" },
+    { title: "Javascript Library", level: 4, type: "front" },
+    { title: "Vuejs", level: 3.5, type: "front" },
+    { title: "Nuxtjs", level: 2.5, type: "front" },
     { title: "PHP", level: 3, type: "back" },
     { title: "Laravel", level: 1, type: "back" },
     { title: "Codeigniter 3", level: 1, type: "back" },
-    { title: "Golang (GIN)", level: 1, type: "back" },
-    { title: "MySQL", level: 4, type: "back" },
-    { title: "Typescript", level: 0, type: "other" },
-    { title: "Nodejs", level: 0, type: "other" },
-    { title: "Unit test", level: 0, type: "other" }
+    { title: "Golang (GIN)", level: 2, type: "back" },
+    { title: "MsSQL", level: 1, type: "back" },
+    { title: "MySQL", level: 4.5, type: "back" },
+    { title: "Typescript", level: 1, type: "front" },
+    { title: ".Net Core", level: 1, type: "back" },
+    { title: "React", level: 1, type: "front" },
+    { title: "Next", level: 0.5, type: "front" },
+    { title: "Nodejs", level: 1, type: "back" },
   ])
 
   const HighlightList = ref([
@@ -56,7 +59,6 @@ export const useInformationeStore = defineStore("information", () => {
     "Dark theme",
     "Multilanguage",
     "Version Control/Git",
-    "Chat-gpt or other ai chat",
     "Read document",
     "Componnet Style",
     "Node package",
@@ -66,7 +68,10 @@ export const useInformationeStore = defineStore("information", () => {
     "Pagination/Infinity Scroll SSR",
     "Experience with web views (True Money)",
     "Experience in insurance industry",
-    "Experience developing e-commerce"
+    "Experience developing e-commerce",
+    "Dependency injection",
+    "Experience with email platform",
+    "Experience with sms platform",
   ])
 
   return { Information, SkillList, HighlightList }

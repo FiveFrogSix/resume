@@ -83,7 +83,7 @@ const initReveal = () => {
           <SkillRank v-bind="back" />
         </div>
       </template>
-      <div class="w-100" ref="otherLabelReveal">
+      <div class="w-100" ref="otherLabelReveal" v-if="skill_other.length > 0">
         <skill-label> Other </skill-label>
       </div>
       <template v-for="(other, index) in skill_other" :key="index">

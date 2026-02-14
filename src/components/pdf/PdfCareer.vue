@@ -18,12 +18,20 @@ defineProps({
   tools: {
     type: String,
     default: ""
+  },
+  start: {
+    type: String,
+    default: ""
+  },
+  end: {
+    type: String,
+    default: ""
   }
 })
 </script>
 <template>
   <div>
-    <p class="text-heading">{{ position }}, {{ company }}</p>
+    <p class="text-heading">{{ position }}, {{ company }} ({{start}} - {{ end }})</p>
     <p class="text-detail f-sarabun">{{ detail }}</p>
     <p class="text-tool">
       <span class="text-tool-sub">{{ t("tool") }}</span
@@ -40,9 +48,14 @@ p {
   font-weight: 500;
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
+  line-height: 20px;
 }
 .text-detail {
   text-indent: 30px;
+  line-height: 19px;
+}
+.text-tool{
+  line-height: 20px;
 }
 .text-tool-sub {
   font-weight: 500;

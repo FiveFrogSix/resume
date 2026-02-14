@@ -1,4 +1,5 @@
 {
+  "present": "Present",
   "hello": "hello world",
   "home": "Home",
   "about": "About",
@@ -24,7 +25,7 @@
   },
   "confirm": "OK",
   "aboutme": {
-    "present": "I have been working as a Web Developer for about 3 years, including over a year of freelancing during my spare time. Currently, I work at an insurance brokerage as a Fullstack Developer, but I primarily focus on Frontend. I also handle some Backend tasks using PHP and Golang (Gin framework). On the Frontend, I mostly work with Vue3 and Vite, although there are some older projects using PHP and JavaScript. While I prefer working on Frontend, I am capable of doing both, with greater proficiency in Frontend. During my freelancing work, I exclusively used Vue.js and Nuxt.js. Currently, I am planning to explore developing for LINE OA with a former team member in my free time.",
+    "present": "I have over 5 years of experience as a Web Developer. I enjoy working as a Full-Stack Developer and am capable of handling both frontend and backend development, with stronger expertise on the frontend side. I have experience working with companies in the insurance and e-commerce industries, as well as freelance experience.",
     "list1": "I am available to work 100% in the office or in a hybrid model, depending on the company's conditions.",
     "list2": "I am eager to learn new tech stacks or techniques.",
     "list3": "The reason I'm seeking a new job is that I'm looking for new challenges, opportunities to learn new things, and to further develop my skills and become even better at what I do.",
@@ -75,9 +76,21 @@
     "hi_vocat_place": "Mubankru Technology College"
   },
   "experience": {
+     "ants": {
+      "name": "Advanced Network Technology and Services Co., Ltd.",
+      "detail": "Responsible for both frontend and backend of the website prakun.com. The products I've worked on include cancer insurance, room charge insurance, life insurance, travel insurance, income compensation insurance, annual/monthly accident insurance, child insurance, annual/monthly car insurance, compulsory motor insurance, and foreign worker insurance. Additionally, there are some products that are either not yet listed for sale, not in use, or not directly related to insurance.",
+      "detail_short": "Maintained and developed the company’s Email Platform and other internal projects, taking responsibility for both frontend and backend development under technology stacks defined by the technical lead.",
+      "list1": "Responsible for both frontend and backend of the website prakun.com.",
+      "list1_1": "Responsible for nearly all aspects of the frontend for products on the website. The only part not handled is sending APIs to request policies from insurance companies.",
+      "list1_2": "Some APIs for retrieving various data points (using both PHP and Golang).",
+      "list2": "Developed the website for foreign labor insurance at prakun.com/immigration.",
+      "list2_1": "Responsible for almost everything except for exporting policies to insurance companies.",
+      "list3": "I have previously worked with TrueMoney Wallet (Webview) for insurance sales.",
+      "list3_1": "Responsible for the frontend."
+    },
     "go": {
-      "name": "GO (THAILAND) COMPANY LIMITED",
-      "detail": "At GO (THAILAND), I primarily work with ANC Insurtech, responsible for both the frontend and backend of the website prakun.com. The products I've worked on include cancer insurance, room charge insurance, life insurance, travel insurance, income compensation insurance, annual/monthly accident insurance, child insurance, annual/monthly car insurance, compulsory motor insurance, and foreign worker insurance. Additionally, there are some products that are either not yet listed for sale, not in use, or not directly related to insurance.",
+      "name": "ANC BROKER COMPANY LIMITED",
+      "detail": "responsible for both the frontend and backend of the website prakun.com. The products I've worked on include cancer insurance, room charge insurance, life insurance, travel insurance, income compensation insurance, annual/monthly accident insurance, child insurance, annual/monthly car insurance, compulsory motor insurance, and foreign worker insurance. Additionally, there are some products that are either not yet listed for sale, not in use, or not directly related to insurance.",
       "detail_short": "Responsible for full-stack development of prakun.com under GO (Thailand) and ANC Insurtech. Worked on various insurance products, including cancer, life, travel, accident, auto, and migrant worker insurance. Focused on front-end tasks and API integration (PHP, Golang), excluding policy transmission to insurers. Also collaborated on Truemoney Wallet (Webview) integration for insurance sales.",
       "list1": "Responsible for both frontend and backend of the website prakun.com.",
       "list1_1": "Responsible for nearly all aspects of the frontend for products on the website. The only part not handled is sending APIs to request policies from insurance companies.",
@@ -89,7 +102,7 @@
     },
     "freelance": {
       "name": "Freelance",
-      "detail_short": "Managed and developed the e-commerce website (Encore Fashion), responsible for the backend system (except APIs), frontend development (Nuxt.js), API adjustments (Gin Golang), database design, server setup (Lightsail Ubuntu), SSL installation, and reverse proxy configuration (Nginx). Additionally, developed job application and task reporting websites (Vue 3, Vite), handling only the frontend and database design. Also set up and maintained the backend server for UPL (Thailand), installed Cloudflare and SSL, and assisted with server setup for a research project at Mahidol University, based on client requirements.",
+      "detail_short": "Maintained and developed an E-commerce website, primarily responsible for backend systems (excluding core API development). Developed frontend applications using Nuxt.js, modified and enhanced APIs built with Gin (Golang), designed database structures, and configured servers on AWS Lightsail (Ubuntu). Implemented SSL and reverse proxy setup using Nginx. Additionally, developed a job application website and task notification system using Vue 3 and Vite.",
       "list1": "Developed the e-commerce website Encore Fashion using Vue 3, Vite, Nuxt.js, and Golang.",
       "list1_1": "Responsible for the backend management system (excluding APIs).",
       "list1_2": "Assisted with the frontend using Nuxt.js (worked on some parts later).",
@@ -131,5 +144,5 @@
     }
   },
   "tool": "Tools",
-  "lib_tip": "JavaScript libraries, CSS frameworks, or popular libraries such as Bootstrap, jQuery, Select2, axios, etc."
+  "lib_tip": "JavaScript libraries, CSS frameworks, or popular libraries such as Bootstrap, Tailwind CSS, jQuery, Select2, axios, etc."
 }

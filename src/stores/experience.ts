@@ -8,8 +8,8 @@ export const useExperienceStore = defineStore("experience", () => {
   const TimelineExp = ref([
     {
       start_date: "2022-03-15",
-      end_date: null,
-      end_date_type: "exp",
+      end_date: "2023-03-03",
+      end_date_type: "",
       sub_date_text: "Full Stack Developer",
       title: t("experience.go.name"),
       sub_title: "",
@@ -79,7 +79,7 @@ export const useExperienceStore = defineStore("experience", () => {
     },
     {
       start_date: "2020-10-01",
-      end_date: "2021-01-01",
+      end_date: "2021-12-03",
       end_date_type: "",
       sub_date_text: "Programmer",
       title: t("experience.bbp.name"),
